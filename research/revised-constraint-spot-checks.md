@@ -47,3 +47,28 @@ This is the AI-coding-boom effect showing up in the data rather than in argument
 - **Regulatory or licensing gates** that take real time to pass.
 
 Anything whose only defence is "the incumbent is expensive and bad" should now be assumed to have two competitors you have not found yet. **Check before believing a gap is open.**
+
+---
+
+## Spot checks 5 and 6 — the pattern holds
+
+**Security questionnaire automation for small SaaS vendors — DEAD on saturation.**
+Fits the new constraints well on paper: expensive recurring pain, enumerable buyers (any B2B SaaS), global and online. But the field is full: **Wolfia, Vanta, Conveyor, SafeBase, SecurityPal AI, Delve, Skypher, AutoRFP.ai** [S] bitsight.com, skypher.co, wolfia.com. **AutoRFP.ai publishes from $899/month**; **SafeBase offers a free tier** [S] autorfp.ai. Squeezed from both ends.
+
+**Developer tools / package-registry distribution — useful mechanics, no clear opening.**
+- **The VS Code Marketplace has NO built-in payment support** — sellers must bolt on an external processor (Dodo Payments, Gumroad, Stripe) [S] superframeworks.com. A marketplace-mechanics fact worth knowing before choosing it as a channel.
+- GitHub Marketplace reportedly contributes ~$200M annually to GitHub's revenue [S] fueler.io.
+- A widely-repeated claim that "the median solo developer with a successful micro SaaS earns $3K–$10K MRR within 12–18 months" [S] bigideasdb.com — **note the word "successful" is doing all the work here, and the source is a content-marketing site.** This is survivorship bias restated as a statistic. It does **not** contradict the Freemius base rate (70% under US$1,000/mo, median ~US$500).
+
+## Running tally: six spot checks, six occupied gaps
+
+| # | Gap checked | Enterprise incumbent | Already occupied by |
+|---|---|---|---|
+| 1 | Tariff / HS-code classification | Avalara (quote-only, **1.1/5 BBB**) | Zonos, GingerControl, Easyship |
+| 2 | Denied-party / sanctions screening | Descartes (**$3k–$100k+/yr**) | ComplyAdvantage (~$99/mo), sanctions.io, Shipping Solutions |
+| 3 | QuickBooks↔Shopify sync | — | A2X $29, Synder $65, Webgility $109–139, MyWorks |
+| 4 | Sales-tax / VAT APIs | Vertex, Avalara | Zamp, TaxJar, Stripe Tax, Anrok, Sovos |
+| 5 | Security questionnaire automation | — | Wolfia, Conveyor, SafeBase, Skypher, AutoRFP.ai $899 |
+| 6 | SaaS sunset tracking (meta-idea) | — | SunsetProof already runs a 2025–2027 tracker |
+
+**Six for six is not bad luck. It is a structural fact about 2026** and it is the strongest empirical support in this whole project for the brief's §4 tension. The corollary for candidate selection stands: **treat "the incumbent is expensive and badly reviewed" as close to zero evidence**, and require a defence that is *time-accumulated* rather than *insight-based*.
