@@ -8,12 +8,25 @@
 
 | Field | Value |
 |---|---|
-| **Project** | RetentionLedger (placeholder) — NZ construction retention-money trust compliance ledger |
-| **Current phase** | **Phase 0 — Validate before building. NOT STARTED.** |
-| **Last updated** | 2026-09-03 |
+| **Project** | **UNDECIDED — re-discovery in progress.** The previous pick (NZ construction retention-money ledger) is **SUPERSEDED**, see below |
+| **Current phase** | **Stage 1 re-discovery under revised constraints.** No candidate selected. |
+| **Last updated** | 2026-09-03 (second revision) |
 | **Updated by** | Research run (Claude Code session) |
-| **Next action** | **Interview ten NZ contractors or their bookkeepers.** Verified demand is the only rubric criterion still holding this below the bar; three of ten describing real pain moves the score to ~67. |
-| **Overall confidence** | **Moderate.** Scored **64/100** against a 65 bar (was 62 before the operator's 2026-09-03 clarifications). The remaining gap is closable by Phase 0 evidence rather than by structure. |
+| **Next action** | **Complete re-discovery, then re-run Stages 2–6.** Three research agents are sweeping: maintenance-moat data products, the unsearched platform ecosystems, and high-price niche B2B with enumerable buyers. |
+| **Overall confidence** | **Unresolved.** No scored candidate under the current constraint set. |
+
+## 🔴 THE RECOMMENDATION IS SUPERSEDED — read this first
+
+On 2026-09-03 the operator revised three constraints:
+1. **Forget New Zealand.** No NZ-specific product, no NZ market.
+2. **Global / online-only business.** Not tied to any local market or physical-world industry.
+3. **Steady-state ceiling raised from 3 to 20 hrs/week.**
+
+**Changes 1 and 2 kill the previous recommendation outright** — the NZ construction retention-money ledger rested on NZ statute and was to be sold through NZ trade associations. Both foundations are gone. `04-recommendation.md` and `05-build-plan.md` are **historical records, not live plans.**
+
+**Change 3 is the most consequential of the whole engagement** and is analysed in `00-brief-review.md` §6. In short: the 3-hour ceiling was systematically selecting *against* the only durable moat available to a solo operator — accumulated maintenance work that a cloner with the same AI tools will not sustain. At 20 hrs/week that class of business is open.
+
+**Also note the target is now tiny.** At NZ$3,000/month: ~18 customers at US$100/mo, or **six at US$300/mo**. The problem is no longer "build a passive funnel" but "find six businesses with an expensive problem" — which favours high prices and enumerable, hard-to-reach buyers.
 
 ---
 
@@ -27,7 +40,10 @@ A NZ-resident solo operator, building with an AI coding agent, wants a software 
 
 | Decision | Reasoning | Where |
 |---|---|---|
-| **Sell B2B, never B2C** | UK has a **nil VAT threshold** for non-established sellers; the EU charges from the **first euro** on B2C digital services. B2B in the EU is reverse-charged — you collect nothing. | `00-brief-review.md` §4.2 |
+| **Sell B2B, never B2C** | UK has a **nil VAT threshold** for non-established sellers; the EU charges from the **first euro** on B2C digital services. B2B in the EU is reverse-charged — you collect nothing. **Unchanged by the geography revision** — selling globally is exactly what a Merchant of Record makes safe. | `00-brief-review.md` §4.2 |
+| **Price high: US$300/mo, not US$29** | At NZ$3,000/month the target is six customers at US$300 versus 62 at US$29, and churn improves above the US$50 line. | `00-brief-review.md` §6.2 |
+| **Prefer maintenance-heavy products** | Grind is the one moat an AI coding agent does not erase. Newly available at 20 hrs/week. | `00-brief-review.md` §6.1 |
+| **A bad expensive incumbent is no longer evidence of an opening** | Four spot checks today each found 2–4 self-serve entrants already occupying the gap below the enterprise incumbent. | `research/revised-constraint-spot-checks.md` |
 | **Use Paddle (Merchant of Record), not raw Stripe** | ~5% + $0.50 is the correct price to make multi-jurisdiction sales tax someone else's problem. A NZ company (Matomo) is a documented Paddle customer. | `00-brief-review.md` §4.1 |
 | **Price at NZ$149/mo, not NZ$79** | Cuts customers needed from 38 to 21 *and* lowers churn by crossing the US$50 threshold, cutting required monthly acquisition from 4.4 to 2.3. Test NZ$199 (16 customers). | `03-deep-dives.md` |
 | **NZ first, Australia year two** | NZ is cheapest for credibility and shares the timezone; AU is ~5× the market. Conditional on Phase 0 confirming a comparable AU retention regime — currently only a competitor's unverified marketing claim. | `03-deep-dives.md` |
