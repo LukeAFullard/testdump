@@ -12,10 +12,11 @@
 | Capital up front | **US$300** | Assumed (field left blank) |
 | Ongoing budget | **US$100/month** | Assumed (field left blank) |
 | Hours during build | **8 hrs/week** | Assumed (field left blank) |
-| Hours after launch | **≤3 hrs/week — hard ceiling** | Assumed (field left blank) |
+| Hours after launch | **Up to 20 hrs/week** | **REVISED by operator 2026-09-03** (was ≤3) |
 | Revenue target | **NZ$3,000/month by month 12** (≈US$1,800) | **CONFIRMED by operator 2026-09-03** |
 | Technical level | Can read, review and direct AI-generated code. Not hand-writing a codebase. | Stated |
-| Country / tax residency | **New Zealand** | Stated |
+| Country / tax residency | **New Zealand — for tax only** | Stated |
+| Target market | **Global / online-only. Explicitly NOT New Zealand.** | **REVISED by operator 2026-09-03** |
 | Existing audience | **None. Zero distribution on day one.** | Stated |
 | Off the table | Physical products, inventory, on-camera work, daily social posting | Stated |
 
@@ -23,7 +24,7 @@
 1. Digital only.
 2. No consulting/agency — revenue must not scale with hours.
 3. Buildable by an AI coding agent on conventional stacks.
-4. Steady-state operator load ≤3 hrs/week.
+4. ~~Steady-state operator load ≤3 hrs/week.~~ **Up to 20 hrs/week (revised 2026-09-03).**
 5. No paid-ads dependency unless CAC payback < 3 months on the stated budget.
 6. Avoid regulated data unless the regime and cost are named.
 
@@ -39,7 +40,8 @@
 | A4 | The ≤3 hrs/week ceiling applies at **steady state**, not during months 1–12 | See critique C1 — as written the ceiling is not achievable during the growth year | Assumed, unchallenged |
 | ~~A5~~ | ~~Willingness to do cold outreach~~ | **RESOLVED 2026-09-03: yes — compliant cold email and occasional trade-forum posting are both acceptable.** This keeps ranked channels #2 and #3 live and is the difference between having a distribution plan and not having one | **Resolved** |
 | A6 | You will register a NZ company or operate as a sole trader, and will use a Merchant of Record | See §4 — this is close to forced for a solo NZ seller | Medium |
-| **A7** | **Target market geography is OPEN** — the business need not serve NZ customers | **RESOLVED 2026-09-03.** The operator remains NZ tax-resident, so §4.2 and §4.5 still bind, but the *customer* may be anywhere. See §4.6 below | **Resolved** |
+| ~~A7~~ | ~~Geography open~~ | **SUPERSEDED 2026-09-03: geography is not merely open, NZ is excluded.** The business must be global and online-only, not tied to any local market. See §6 | **Resolved** |
+| **A8** | **Steady-state ceiling raised from 3 to 20 hrs/week** | **RESOLVED 2026-09-03.** This is the largest single change in the whole engagement and it inverts several earlier conclusions. See §6 | **Resolved** |
 
 ---
 
@@ -133,3 +135,63 @@ Evidence tiers used throughout these documents:
 - **NO EVIDENCE FOUND** — I looked and found nothing. A legitimate result.
 
 Anything marked **[S]** should be re-checked by opening the page before you act on it. This is a genuine downgrade against the brief's stated standard and I would rather name it than paper over it.
+
+---
+
+## 6. The 2026-09-03 constraint revision — and why it changes the answer, not just the numbers
+
+Three changes arrived together: **forget NZ; online-only; up to 20 hrs/week.** The third is not a loosening of a parameter. It reverses the selection logic that produced the earlier recommendation.
+
+### 6.1 The 3-hour ceiling was systematically selecting against the only available moats
+
+Look at what the old ceiling actually killed, from `02-kill-log.md` and `01-longlist.md`:
+- US restaurant health-inspection data — killed on **scraper maintenance**
+- QuickBooks↔Shopify reconciliation patch — killed partly on **two-API maintenance load**
+- AU Payday Super — killed partly on **3–4 hrs/week**, over the ceiling
+- Funeral homes, marinas, driving schools — killed on **support load**
+- Any per-jurisdiction data aggregation — killed on **ongoing upkeep**
+
+Now notice what those all have in common: **the maintenance burden that disqualified them is the same property that would have defended them.** A competitor with identical AI coding tools can clone a feature in three weeks. What they will not do is maintain 60 jurisdiction-specific scrapers, or keep a duty-rate table current every week, for two years. **Grind is the one moat an AI coding agent does not erase**, and the old ceiling forbade exactly that.
+
+> **This is the central resolution of the brief's §4 tension.** The answer to "what stops someone cloning this in three weeks" is not cleverness or first-mover advantage. It is accumulated, boring, ongoing work that a cloner would have to redo and then sustain. At 3 hrs/week that answer was unavailable. At 20 hrs/week it is the strategy.
+
+### 6.2 The target is now genuinely small, which changes what to look for
+
+At NZ$3,000/month (~US$1,800):
+
+| Price point | Customers needed | New customers/month to get there in 12 mo |
+|---|---|---|
+| US$29/mo | 62 | ~7 |
+| US$100/mo | 18 | ~2 |
+| **US$300/mo** | **6** | **~0.7** |
+| US$500/mo | 4 | ~0.5 |
+
+[ESTIMATE, 5% monthly churn, model in `03-deep-dives.md`]
+
+> **Six customers.** At US$300/month the entire twelve-month goal is six paying businesses. That is not a marketing problem; it is a "find six companies with an expensive problem" problem — and with 20 hrs/week available for manual outreach, it is very tractable.
+>
+> **Strategic consequence: hunt for expensive problems affecting enumerable buyers, not large addressable markets.** Vendors whose pricing is sales-quote-only are the signal, because opaque enterprise pricing means they ignore anyone small — while the small firms still have the problem.
+
+### 6.3 Where the "no consulting" line now sits
+
+Raising the ceiling to 20 hrs/week creates real tension with hard constraint 2 (*revenue must not scale linearly with hours*). The line I am applying:
+
+- **Allowed:** manual prospecting and sales, hands-on onboarding of early customers, data and scraper maintenance, support. These do not scale with customer count in a fixed ratio and are normal for early B2B.
+- **Not allowed:** per-customer fulfilment — the operator personally producing each customer's output every month. That is an agency with a login page, and it fails the brief regardless of hours available.
+
+**Test to apply to every candidate: if customer number seven arrives, does the operator's monthly workload rise by a fixed, unavoidable per-customer amount?** If yes, reject.
+
+### 6.4 What this invalidates from the earlier work
+- **The recommendation is dead.** The NZ construction retention-money ledger was built on NZ statute and sold through NZ trade associations. "Forget NZ" removes both. `04-recommendation.md` is superseded.
+- **The Australia expansion path dies with it** — same reason.
+- **The passivity criterion (10 points) is now near-uniformly satisfied**, so it stops discriminating between candidates and the effective rubric narrows to seven meaningful criteria.
+- **Several Stage 3 kills should be reconsidered**, specifically those killed on maintenance or support load rather than on demand or competition.
+
+### 6.5 What it does NOT change
+- Generic SEO is still not a viable channel (`research/distribution-findings.md`).
+- Churn at low price points is still 6–8.6% monthly — another argument for pricing high.
+- Base rates are still hostile: 54% of indie products earn $0; median micro-SaaS ~US$500/month.
+- NZ tax residency still applies: **sell B2B, use a Merchant of Record.** §4.2 and §4.3 stand unchanged. Selling globally is precisely what Paddle exists to make safe.
+- Timezone still rules out anything needing same-day interactive support or live sales calls into the US or EU.
+
+---
