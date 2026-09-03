@@ -1,255 +1,243 @@
-# 05 — Phased Build Plan
-## NZ Construction Retention-Money Trust Compliance Ledger
+# 05 — Phased Build Plan (Round 2)
+## Multi-Jurisdiction Corporate Insolvency / Distress-Event API
 
-**Run date 2026-09-03. Conditional on Phase 0 clearing — see `04-recommendation.md`.**
+*Round 1's plan is preserved as `05-build-plan-ROUND1-SUPERSEDED.md`.*
 
-**Working name:** RetentionLedger (placeholder)
-**Buyer:** NZ construction businesses that hold retention money from subcontractors
-**Price:** NZ$149/month — set by the value-pricing arithmetic in `03-deep-dives.md`, not by competitors. Test NZ$199.
-**Target:** **NZ$3,000/month ≈ 21 customers ≈ 2.3 new paying customers per month** (one every ~13 days)
-**Geography:** NZ first for credibility and timezone, **Australia as the year-two market** (~5× the size, 2–4 hr gap) if Phase 0 confirms a comparable retention regime there.
-**Payments:** Paddle (Merchant of Record). NZ-domestic B2B first, so GST is the only tax surface; Paddle absorbs the tax problem when expanding.
-**Non-negotiable product boundary:** the software **never touches, moves or custodies money.** Tracking and reporting only. Crossing this line pulls the business into NZ Financial Service Providers Act 2010 and AML/CFT Act 2009 scope.
+**Working name:** GazetteFeed (placeholder)
+**Buyer:** credit-risk teams, trade-credit insurers, factoring and invoice-finance firms, procurement risk
+**Price:** **US$300/month** from the first invoice. Do not launch cheap and hope to raise.
+**Target:** NZ$3,000/month ≈ **six customers** ≈ one every seven weeks
+**Coverage at launch:** **France (BODACC) → UK (The Gazette) → Spain (BORME).** **Germany excluded** until the NRW dispute resolves.
+**Payments:** Paddle (Merchant of Record) — B2B, reverse-charge in the EU, no VAT registration needed by you.
+**Hours:** 8/week build; **up to 20/week ongoing** — of which 8–12 is the maintenance that constitutes the moat.
 
-**Budget envelope:** ~NZ$500 (US$300) upfront, ~US$100/month ongoing.
-**Hours:** 8/week during build; ≤3/week at steady state (Phase 5 exit criterion, not a Phase 0–4 operating constraint — see `00-brief-review.md` §C1).
+> **The non-negotiable rule of this plan: the product asserts what a public register published and when. It never asserts that a company is solvent.** That distinction is the difference between a data feed and an uninsurable credit opinion.
 
 ---
 
-## Phase 0 — Validate before building
-### *No code. This is the gate on everything.*
+## Phase 0 — Verify the licences. Nothing else matters first.
+### No code. No landing page. This gate can end the project in a week.
 
-**Objective.** Determine whether enough businesses hold retention money, and whether they experience the obligation as painful enough to pay NZ$149/month.
-
-> **Priority order matters.** Deliverable 2 (interviews) is now the single highest-leverage item in the whole plan: **verified demand evidence is the only rubric criterion still holding this below your 65 bar.** Three of ten interviewees describing real pain moves the score to ~67. Do the interviews first, not last.
+**Objective.** Establish that commercially redistributing corporate insolvency notices from France, the UK and Spain is lawful, and that buyers feel the pain.
 
 **Deliverables**
-1. `research/tam.md` — a sourced count of NZ businesses holding retention money, from MBIE construction statistics, Stats NZ business demography by ANZSIC construction subclass, and Registered Master Builders / Specialist Trade Contractors Federation membership figures. Every figure with a URL and date.
-2. `research/interviews.md` — notes from **10 conversations** with NZ head contractors, construction bookkeepers or QSs. Script: *"Walk me through how you handled your last quarterly retention report."* Do not pitch. Listen.
-3. `research/competitors.md` — actual prices for Retention Track, Payapps, Gojee, Workbench, obtained by signing up for trials or asking directly.
-4. `research/legal.md` — written confirmation of the Act's current commencement and obligations, from MBIE or a NZ construction lawyer.
-5. **`research/expansion.md` — whether Australia and the UK have comparable retention-trust regimes.** Retention Track markets itself as "AU/NZ/UK legislation-matched" [S], but that is a competitor's marketing claim and is **unverified**. Check the Australian state Security of Payment / project trust account schemes and UK construction retention practice directly. If comparable regimes exist, the small-TAM risk becomes a staged expansion plan instead.
-6. A one-page written go/no-go with the numbers.
+1. `research/licences.md` — the **actual text** of Licence Ouverte 2.0 (France), OGL v3.0 (UK) and Spain's Law 37/2007 reuse conditions, read directly rather than via search summary, with the specific clauses permitting commercial redistribution quoted and linked. **Everything in this repo about these licences came from search snippets because page-fetching was blocked; none of it is good enough to build on.**
+2. `research/legal-opinion.md` — a paid short-form opinion from an EU data-protection or PSI-reuse lawyer covering: (a) commercial redistribution of corporate insolvency notices in FR/UK/ES; (b) whether the German restriction signals contagion; (c) the UK OGL personal-data exclusion and whether corporate notices sit clearly outside it.
+3. `research/competitors.md` — signed-up accounts with **Prometiam** and **Insolvencies.live**: real pricing, coverage, latency, data shape. Plus getregdata's per-result economics.
+4. `research/interviews.md` — **10 conversations** with credit-risk or trade-credit underwriting staff. Script: *"Walk me through the last time you found out a European customer had filed. How did you learn, and how late was it?"* Do not pitch.
+5. `research/liability.md` — a drafted limitation-of-liability clause and a quote for professional indemnity insurance.
 
 **Acceptance criteria**
-- [ ] TAM figure sourced from **≥2 independent official sources**
-- [ ] **≥10** interviews completed and written up
-- [ ] **≥3** competitor prices obtained
-- [ ] Legal position confirmed in writing by a named source
-- [ ] AU/UK regime question answered either way, with sources
+- [ ] All three licence texts read in full and the redistribution clause quoted verbatim
+- [ ] Written legal opinion obtained covering all three jurisdictions
+- [ ] Both competitors' live pricing and latency documented from inside their products
+- [ ] **≥10** interviews written up
+- [ ] **≥4 of 10** describe learning about a filing too late, or name a loss
+- [ ] PI insurance quote obtained and affordable within budget
 
-**Effort and cost.** Agent: ~4 hrs (desk research, drafting outreach). Operator: **~12 hrs** (the interviews — this part cannot be delegated). Cost: **NZ$0–200** (optional legal question).
+**Effort and cost.** Agent ~6 hrs. Operator **~15 hrs**. Cost **NZ$500–900** (legal opinion, competitor subscriptions, insurance quote).
 
-**🛑 KILL CRITERIA — stop entirely if any of these is true**
-- Pool of businesses holding retentions is **under 400** *(threshold lowered from 800 by the confirmed NZ$3,000 target)* **and** no comparable AU regime exists to expand into
-- **Fewer than 3 of 10** interviewees describe the quarterly obligation as painful, or say they already handle it adequately
-- **≥2 of 5** incumbents already offer a dedicated, well-reviewed compliance product under NZ$149/month
-- Xero or a major NZ construction platform has retention-trust compliance on a published roadmap
-- Legal advice says the tracking-only product cannot avoid FSP/AML scope
+**🛑 KILL CRITERIA — stop entirely**
+- **Any** of the three licences prohibits commercial redistribution, or the lawyer cannot confirm it
+- The German restriction is assessed as an EU-wide direction of travel rather than a local dispute
+- **Fewer than 4 of 10** interviewees report late notice or a loss
+- Prometiam or Insolvencies.live turn out to be fast, cheap, well-covered and well-supported — you would be fourth with no edge
+- PI insurance is unobtainable or unaffordable for a solo vendor
 
-**Resume block.** *A fresh agent needs:* this repo; `04-recommendation.md` for why this was chosen and its named weaknesses; the kill criteria above; the fact that **no claim in this repo was verified by opening a source page** (network was blocked), so everything needs re-checking; and that the single decisive unknown is the TAM denominator.
+**Resume block.** *A fresh session needs:* this repo; `04-recommendation.md` for the reasoning and the named bear case; the fact that **all licence claims in this repo are unverified search snippets**; and that Germany is deliberately excluded.
 
 ---
 
 ## Phase 1 — Demand smoke test
 
-**Objective.** Prove that NZ contractors will give up an email address for this before a line of product code is written.
+**Objective.** Confirm named credit-risk buyers will engage before any scraper is written.
 
 **Deliverables**
-1. One landing page: the obligation, the penalty, what the tool does, NZ$149/month stated openly, email capture.
-2. A 12-question self-assessment ("Are you compliant?") as the lead magnet — genuinely useful standalone.
-3. Outreach to **100** NZ head contractors, using deemed consent under the Unsolicited Electronic Messages Act 2007: publicly-published business addresses only, role-relevant message, clear sender identity, working unsubscribe. **Re-read `research/distribution-findings.md` Finding 4 before sending anything.**
-4. Posts in 2–3 NZ construction communities where self-promotion is permitted. Check rules first.
-5. Approaches to Registered Master Builders and Specialist Trade Contractors Federation about a member newsletter mention.
+1. A one-page technical landing page: coverage, latency promise, webhook shape, sample JSON payload, US$300/mo stated openly. Written for developers and risk analysts, not marketers.
+2. A **free live sample feed** — the last 30 days of French BODACC insolvency notices, normalised, publicly queryable. This is the lead magnet and it doubles as proof the pipeline works.
+3. **60 compliant outreach emails** to named credit-risk managers, trade-credit underwriters and factoring ops staff, identified via LinkedIn title search and trade-body directories. UEMA 2007 deemed consent: publicly-published business addresses, role-relevant message, clear sender identity, working unsubscribe.
+4. Posts in 2–3 credit-risk or fintech communities that permit tool sharing.
 
 **Acceptance criteria**
-- [ ] Page live on a custom domain, loads under 2s, mobile-legible
-- [ ] Analytics recording visits and conversions
-- [ ] 100 outreach emails sent, all UEMA-compliant, with unsubscribe honoured automatically
-- [ ] **≥20 email signups** *(lowered with the revised target — you need 21 customers, not 34)*
-- [ ] **≥5 people reply asking when it ships or what it costs** — the real signal
+- [ ] Sample feed live, updating daily, with a public JSON endpoint
+- [ ] 60 outreach emails sent, all UEMA-compliant, unsubscribes honoured automatically
+- [ ] **≥12 replies**
+- [ ] **≥4 people ask about pricing, coverage or an API key** unprompted
+- [ ] **≥1 person asks for a jurisdiction you don't yet cover** — the clearest possible demand signal
 
-**Effort and cost.** Agent: ~10 hrs. Operator: ~8 hrs. Cost: **~NZ$60** (domain + email sending).
+**Effort and cost.** Agent ~12 hrs. Operator ~10 hrs. Cost ~NZ$80 (domain, email).
 
 **🛑 KILL CRITERIA**
-- **Under 12 signups** from 100 targeted emails plus community posts (a <12% response to a legally-forced problem means the pain is not felt)
-- **Zero** unprompted "when can I buy this" replies
-- Association contacts uniformly decline to mention it
+- Under 6 replies from 60 targeted, role-relevant emails
+- Zero unprompted pricing or access enquiries
+- Consistent feedback that existing tools are already fast enough
 
-**Resume block.** *Needs:* Phase 0 outputs; the landing page repo; the outreach list and send log (for unsubscribe compliance); current signup count against the 25 threshold; and the standing rule that outreach is consent-based under NZ law.
+**Resume block.** *Needs:* Phase 0 outputs; the outreach list and send log (for unsubscribe compliance); reply counts against thresholds; the sample-feed repo.
 
 ---
 
 ## Phase 2 — Thin-slice MVP
-### *No accounts. No billing. No settings pages.*
+### One jurisdiction. No accounts, no billing, no settings.
 
-**Objective.** Build the single core loop: enter retentions held → produce a compliant quarterly report.
+**Objective.** France end to end: BODACC → normalised records → queryable API → webhook.
 
 **Deliverables**
-1. Retention record entry: subcontractor, contract, amount, dates, trust account reference.
-2. Trust-ledger view with running balances per subcontractor.
-3. **Quarterly report generator** producing the statutorily-required PDF: amount, contract, dates, bank details, inspection rights.
-4. A breach warning when a ledger position is inconsistent.
-5. A seeded demo dataset.
-6. **CSV import/export first. No Xero integration yet** — this deliberately avoids the March 2026 Xero egress pricing exposure until the product is proven.
+1. BODACC ingestion on a schedule, with change detection.
+2. A normalised schema — company identifier, legal name, procedure type, court, filing date, source URL, ingestion timestamp. **Every record carries a link to the source notice**; the product never asserts anything the register did not publish.
+3. REST endpoint: query by company identifier and by date range.
+4. Webhook delivery with retry and dead-letter handling.
+5. Ingestion-failure alerting to the operator.
+6. A public status page showing last-successful-ingestion per jurisdiction. **With this buyer, visible freshness is the product.**
 
 **Acceptance criteria** *(machine-checkable)*
-- [ ] Automated test suite passes; **≥80% coverage on ledger arithmetic**
-- [ ] Property-based test: for any sequence of retention movements, ledger balance equals the sum of movements — no floating-point drift (use integer cents)
-- [ ] Generated PDF contains every field the Act requires, asserted by test
-- [ ] End-to-end test: seed data → generate report → assert PDF field values
-- [ ] Report generation completes in under 5s for 100 subcontractors
-- [ ] **A real contractor from Phase 1 confirms the generated report would satisfy their obligation**
+- [ ] Test suite passes; **≥80% coverage on parsing and normalisation**
+- [ ] Golden-file tests: a fixed set of real BODACC notices parses to expected records; **any parser regression fails CI**
+- [ ] Idempotency test: re-ingesting the same notice creates no duplicate
+- [ ] **Freshness test: a notice published today appears in the API within 24 hours**, asserted by an automated daily check
+- [ ] Webhook delivery retries on failure and dead-letters after N attempts, proven by test
+- [ ] Status page reflects a deliberately induced ingestion failure within 15 minutes
 
-**Effort and cost.** Agent: ~30 hrs. Operator: ~10 hrs (review, and getting that confirmation). Cost: **~US$20/month** (hosting).
+**Effort and cost.** Agent ~35 hrs. Operator ~10 hrs. Cost ~US$25/month.
 
 **🛑 KILL CRITERIA**
-- No Phase 1 contact will look at the output
-- The contractor who reviews it says the report would **not** satisfy the obligation and the gap needs domain knowledge you cannot acquire
-- Ledger arithmetic cannot be made provably correct — for a compliance product, "mostly right" is worthless
+- BODACC data proves too unstructured to parse to a reliable schema
+- Freshness cannot beat the incumbents' 3–21 day lag — **latency is the entire value proposition**
+- No Phase 1 contact will test the endpoint
 
-**Resume block.** *Needs:* Phase 1 signup list; the schema; the statutory field list from `research/legal.md`; the integer-cents rule; and the deliberate decision to stay off the Xero API in this phase.
+**Resume block.** *Needs:* the schema; golden-file fixtures; the freshness SLA; the rule that every record links to its source; and that Spain requires scraping while France and the UK have structured feeds.
 
 ---
 
 ## Phase 3 — Monetisation
 
-**Objective.** First real paying customer.
+**Objective.** First paying customer, and the UK added.
 
 **Deliverables**
-1. Accounts and authentication.
-2. **Paddle** subscription billing at NZ$149/month, 14-day trial, no card up front.
-3. Self-serve onboarding: import subcontractors from CSV, first report inside 15 minutes.
-4. Transactional email: welcome, trial ending, payment failed, quarterly reminder.
-5. Error alerting to the operator.
-6. Terms, privacy policy (NZ Privacy Act 2020), and an explicit disclaimer that the product is **not legal advice**.
+1. API-key issuance, accounts, usage metering.
+2. **Paddle** subscription at US$300/month, 14-day trial with a key issued immediately.
+3. UK (The Gazette) ingestion — **corporate notices only**, with an explicit filter excluding individual-insolvency notices per the OGL personal-data exclusion.
+4. Developer docs: authentication, endpoints, webhook payloads, a runnable curl example, and a stated freshness SLA.
+5. Terms of service carrying the Phase 0 limitation-of-liability wording and an explicit statement that the feed reports published notices and is not a credit opinion.
+6. Dunning and failed-payment handling.
 
 **Acceptance criteria**
-- [ ] End-to-end test: signup → trial → card → active subscription → invoice issued
-- [ ] Dunning tested: failed payment triggers retry and email
-- [ ] Cancellation works without contacting the operator
-- [ ] A new user reaches their first generated report in **under 15 minutes unaided**, measured
+- [ ] End-to-end test: signup → key issued → API call succeeds → trial converts → invoice raised
+- [ ] A developer reaches a successful authenticated API call **in under 10 minutes from the docs alone**, measured on a real person
+- [ ] UK personal-data exclusion enforced **in code**, with a test asserting individual-insolvency notices are never emitted
 - [ ] **≥1 customer has paid real money**
-- [ ] Zero manual steps between signup and value
+- [ ] Cancellation is self-serve
 
-**Effort and cost.** Agent: ~25 hrs. Operator: ~8 hrs. Cost: **~US$40/month** + Paddle 5% + $0.50/transaction.
+**Effort and cost.** Agent ~28 hrs. Operator ~10 hrs. Cost ~US$50/month + Paddle 5% + $0.50/txn.
 
 **🛑 KILL CRITERIA**
-- **Zero paying customers 8 weeks after billing goes live**, having contacted every Phase 1 signup
-- Trial-to-paid conversion **under 5%** with ≥20 trials
-- Onboarding needs operator intervention for **more than 1 in 5** signups — that is a per-customer manual labour cost, which violates the core constraint
+- **Zero paying customers 10 weeks after billing goes live**, having contacted every Phase 1 respondent
+- Buyers consistently demand Germany as a precondition — the one market you cannot lawfully serve
+- Trial-to-paid under 15% with ≥10 trials
 
-**Resume block.** *Needs:* Paddle account details (MoR chosen because of the UK nil-VAT-threshold and EU first-euro rules in `00-brief-review.md` §4.2); current paying-customer count; trial conversion rate; and the rule that no signup may require a human.
+**Resume block.** *Needs:* Paddle details; the UK personal-data filter and its test; current customer count; trial conversion; and the standing rule that the ToS never implies a solvency opinion.
 
 ---
 
-## Phase 4 — Distribution engine
+## Phase 4 — Distribution and coverage engine
 
-**Objective.** Build the one compounding channel, and work it for 90 days before judging it — the pattern the evidence supports.
+**Objective.** Reach six paying customers, and make coverage the reason they stay.
 
 **Deliverables**
-1. **Primary: trade-association channel.** Registered Master Builders and Specialist Trade Contractors Federation — member newsletter mention, directory listing, or member-benefit arrangement.
-2. **Secondary: Xero App Store listing.** Requires certification with **≥3 active customers onboarded inside a 30-day review window** — which is why this comes after Phase 3, not before. Model the egress cost against the March 2026 tiers before connecting anything.
-3. **Tertiary: a small set of genuinely useful pages** — a retention-obligation explainer, a free trust-ledger template, a penalty calculator. Not a content treadmill; a handful of durable, linkable assets.
-4. Continued compliant outreach, batched weekly.
-5. A referral ask to every satisfied customer at day 60.
+1. **Spain (BORME) ingestion** — the scraping-based jurisdiction. Completing FR+UK+ES reaches parity with both named competitors.
+2. Sustained compliant outreach: 40 named prospects per month, batched weekly.
+3. A **public coverage and latency page** — jurisdictions, freshness, historical uptime. Publish latency honestly; with this buyer it is the strongest possible marketing.
+4. Listings in fintech and risk-tooling directories, plus RapidAPI as a secondary discovery channel.
+5. One genuinely useful public artefact — for example an open dataset of French insolvency filing volumes by month and sector — as a linkable asset that earns attention without a content treadmill.
+6. Referral ask to every satisfied customer at day 60.
 
 **Acceptance criteria**
-- [ ] **≥1 association relationship live** (newsletter mention, listing, or member benefit)
-- [ ] Xero listing submitted, or a documented decision not to, with the egress cost modelled
-- [ ] **≥2 new paying customers per month for 3 consecutive months** — the arithmetic requires 2.3
-- [ ] CAC measured and under NZ$300 (payback inside 2 months at NZ$149)
-- [ ] Churn measured; **under 6% monthly**
+- [ ] Three jurisdictions live with published per-jurisdiction freshness
+- [ ] **≥6 paying customers**
+- [ ] Median notice-to-API latency **under 24 hours**, published
+- [ ] Churn **under 5% monthly**
+- [ ] CAC under US$400 (payback inside 1.5 months at US$300/mo)
+- [ ] **≥1 customer citing coverage or latency as the reason they chose you over a named competitor**
 
-**Effort and cost.** Agent: ~20 hrs. Operator: ~6 hrs/week for 90 days. Cost: **~US$60/month**, plus optional NZ$200–400 for an association listing.
+**Effort and cost.** Agent ~25 hrs. Operator ~12 hrs/week sustained. Cost ~US$80/month.
 
 **🛑 KILL CRITERIA**
-- After 90 days of one focused channel, **fewer than 1 new paying customer per month**
-- Churn **above 8% monthly** — at that rate the target is arithmetically unreachable
-- CAC exceeds 3 months of revenue with no path down
-- Xero egress cost at projected scale exceeds 20% of revenue
+- Fewer than 3 paying customers 6 months after billing began
+- Churn above 8% monthly
+- A competitor reaches 6+ jurisdictions with better latency while you are at three
+- A source jurisdiction restricts redistribution — treat as an existential review, not a setback
 
-**Resume block.** *Needs:* which channel was chosen and the 90-day start date (do not switch channels early); association contacts and status; the Xero egress model; and the current monthly new-customer rate against the 3.7 target.
+**Resume block.** *Needs:* per-jurisdiction ingestion status; the coverage page; customer count and churn; competitor coverage as last checked; and the standing rule to publish latency honestly.
 
 ---
 
-## Phase 5 — Passivity hardening
+## Phase 5 — Hardening
 
-**Objective.** Drive operator time to ≤3 hrs/week and prove it with a measurement, not an assertion.
+**Objective.** Make the maintenance sustainable and prove the hours, because the maintenance *is* the moat and burnout is the way it fails.
 
 **Deliverables**
-1. Self-serve documentation covering the top 20 support questions actually received.
-2. In-app contextual help at the three points where users get stuck.
-3. Automated dunning, trial reminders, quarterly deadline reminders.
-4. Uptime and error monitoring with alerts.
-5. Canned support responses for the top 10 questions.
-6. A regulatory-watch routine: a monthly calendar reminder to check MBIE and building.govt.nz for changes.
-7. **A time log — four weeks of actual recorded minutes, itemised.**
+1. Per-source health monitoring with alerting on schema drift, not just on hard failure — **the dangerous failure mode is a parser that silently stops matching, not one that crashes.**
+2. Automated golden-file regression on every source, daily.
+3. Runbooks for each jurisdiction: where the data comes from, known quirks, what breakage looks like, how to fix it.
+4. Self-serve docs covering the top 20 support questions.
+5. A monthly regulatory-watch routine covering all source jurisdictions plus the German dispute.
+6. **A four-week itemised time log.**
 
 **Acceptance criteria**
-- [ ] Measured operator time **≤3 hrs/week averaged over 4 consecutive weeks**, itemised as: support ___ min, ops ___ min, updates ___ min, content ___ min, admin ___ min
-- [ ] **≥70% of support questions answerable by linking to a doc**
-- [ ] Zero manual steps in onboarding, billing or cancellation
-- [ ] Alerting verified by a deliberately induced failure
-- [ ] The product survives a **two-week untouched period** with no customer-visible degradation — run this test for real
+- [ ] Measured operator time **≤15 hrs/week averaged over 4 weeks**, itemised: parser maintenance ___, support ___, outreach ___, admin ___
+- [ ] Schema-drift alerting proven by deliberately feeding a malformed source document
+- [ ] Every jurisdiction has a written runbook a stranger could follow
+- [ ] **The product survives a two-week untouched period with no silent data gaps** — run this for real and verify afterwards that no notices were missed
+- [ ] ≥70% of support questions answerable by linking to docs
 
-**Effort and cost.** Agent: ~15 hrs. Operator: ~6 hrs. Cost: **~US$70/month**.
+**Effort and cost.** Agent ~18 hrs. Operator ~10 hrs. Cost ~US$90/month.
 
 **🛑 KILL CRITERIA**
-- Measured time **exceeds 5 hrs/week** after hardening, with no further automation available
-- Support load grows **faster than linearly** with customers
-- The two-week untouched test produces customer-visible failures
+- Measured time exceeds 20 hrs/week with no automation left
+- The two-week untouched test reveals **silent** data gaps that alerting missed
+- Parser breakage exceeds roughly one incident per source per month
 
-**Resume block.** *Needs:* the four-week time log; the support-question inventory; which questions still lack docs; and the standing rule that the ceiling is measured, never assumed.
+**Resume block.** *Needs:* the time log; per-source runbooks; drift-alerting config; and the rule that silent gaps are the real risk.
 
 ---
 
 ## Phase 6 — Compound or kill
 
-**Objective.** Decide with numbers, on a date set in advance, rather than by drift.
-
 **Review date: 12 months after Phase 3 billing went live.**
 
-**Deliverables.** A one-page review against the numbers below, and a decision recorded in `STATE.md`.
+### DOUBLE DOWN if all hold
+- MRR **≥ NZ$2,500** and growing
+- Churn **< 5% monthly**
+- Operator time **≤ 15 hrs/week**
+- **≥4 jurisdictions** live with sub-24-hour median latency
+- CAC payback **< 2 months**
 
-### DOUBLE DOWN if all of these hold
-- MRR **≥ NZ$2,000** and growing month on month
-- Churn **< 6% monthly**
-- Operator time **≤ 3 hrs/week** sustained
-- CAC payback **< 3 months**
-- **≥1 channel** producing customers predictably
+*Then:* add Italy, Netherlands and Portugal; revisit Germany only if the NRW dispute resolves favourably; raise price for new customers; consider adjacent distress events (court judgments, striking-off notices).
 
-*Then:* raise the price for new customers, add the adjacent obligation (progress claims), and **open Australia** — ~5× the market, shared timezone, and already scoped in Phase 0's expansion research.
+### SHUT DOWN if any hold
+- MRR **< NZ$800** after 12 months of selling
+- Churn **> 10% monthly**
+- A source jurisdiction prohibits redistribution and cannot be replaced
+- A competitor reaches 8+ jurisdictions with better latency and lower price
+- Operator time **> 20 hrs/week** sustained
 
-### SHUT DOWN if any of these hold
-- MRR **< NZ$750** after 12 months of selling
-- Churn **> 10% monthly** sustained
-- Operator time **> 5 hrs/week** with no automation left
-- Zero customers acquired in the last 8 weeks
-- An incumbent has shipped this natively and is winning
-
-*Then:* consider selling. At 2–3× annual SDE for this tier, a business at NZ$1,500/month might fetch roughly **NZ$36,000–54,000** [ESTIMATE, from the multiples in `research/ground-truth-findings.md`] — a real outcome, not a failure.
+*Then:* consider selling. At 2–3× annual SDE, a business at NZ$2,000/month might fetch roughly **NZ$48,000–72,000** [ESTIMATE, multiples from `research/ground-truth-findings.md`]. A data business with accumulated coverage may fetch better than a generic SaaS at the same revenue, because the coverage is the asset — but I have **no category-specific multiple** to support that.
 
 ### KEEP GOING, DON'T EXPAND if in between
-Revenue NZ$750–2,000, acceptable churn, hours within ceiling. Hold it as a small profitable asset. Do not add features. Do not hire. **Re-review in 6 months.**
-
-**Effort and cost.** Agent: ~2 hrs. Operator: ~3 hrs.
-
-**Resume block.** *Needs:* the metric history since Phase 3; this decision table; and the instruction that the decision is made against these numbers on the date set, not deferred because it feels bad.
+Hold as a small profitable asset. Add no features. Maintain coverage. Re-review in 6 months.
 
 ---
 
-## Cumulative budget check
+## Budget check
 
 | Phase | Agent hrs | Operator hrs | Cost |
 |---|---|---|---|
-| 0 | 5 | 12 | NZ$0–200 |
-| 1 | 10 | 8 | ~NZ$60 |
-| 2 | 30 | 10 | ~US$20/mo |
-| 3 | 25 | 8 | ~US$40/mo + Paddle fees |
-| 4 | 20 | ~6/wk × 90 days | ~US$60/mo + NZ$200–400 |
-| 5 | 15 | 6 | ~US$70/mo |
+| 0 | 6 | 15 | NZ$500–900 |
+| 1 | 12 | 10 | ~NZ$80 |
+| 2 | 35 | 10 | ~US$25/mo |
+| 3 | 28 | 10 | ~US$50/mo + Paddle |
+| 4 | 25 | ~12/wk | ~US$80/mo |
+| 5 | 18 | 10 | ~US$90/mo |
 | 6 | 2 | 3 | — |
-| **Total** | **~107** | **~125** | **Within US$300 upfront and US$100/month** |
+| **Total** | **~126** | **~140 + sustained** | **Upfront exceeds US$300 in Phase 0 only** |
 
-**Honest note on hours.** Operator time across Phases 0–4 averages **well above 3 hrs/week** — closer to 6–8. The ≤3 hrs/week ceiling is a Phase 5 *exit criterion*, and treating it as a build-phase constraint would make the plan undeliverable. This is flagged in `00-brief-review.md` §C1 and is the single most important expectation to set correctly before starting.
+**One budget honesty note.** Phase 0's legal opinion (NZ$500–900) **exceeds the US$300 upfront allowance.** I am recommending you spend it anyway: it is the cheapest possible way to discover the project is illegal, and every other cost in the plan is contingent on it. If that is genuinely unavailable, the fallback is to read the three licence texts yourself and launch **France only** — its Licence Ouverte is the most explicit about commercial redistribution — accepting materially more risk.

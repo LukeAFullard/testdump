@@ -214,3 +214,170 @@ Gross signups req. = ~4/month, ~50 over 12 months             [ESTIMATE, 5% mont
 > The structural weakness is unchanged and will not improve: **defensibility stays at 4/10**, and no amount of validation fixes that.
 
 The consistent pattern across all three is instructive rather than accidental: **every candidate scores well on buildability and poorly on defensibility and verified demand.** That is precisely the tension §4 of the brief predicted, showing up in the numbers rather than in argument.
+
+---
+---
+
+# ROUND 2 DEEP DIVES (2026-09-03) — under revised constraints
+
+Round 1 above is superseded. Constraints: **global/online only, no NZ, up to 20 hrs/week, NZ$3,000/month.**
+
+## Revised arithmetic — the target is small and that is the point
+
+At **NZ$3,000/month (~US$1,800)**, with 5% monthly churn and `N(12) = G × 9.19`:
+
+| Price | Customers needed | New customers/month | Gross over 12 mo |
+|---|---|---|---|
+| US$100 | 18 | 2.0 | ~24 |
+| **US$300** | **6** | **0.7** | **~8** |
+| US$400 | 5 | 0.5 | ~7 |
+
+**At US$300/month the entire twelve-month goal is six paying businesses — roughly one every seven weeks.** With 20 hrs/week available for outreach this is a prospecting problem, not a marketing problem, and it argues for pricing at US$250–400 rather than US$29.
+
+---
+
+# Candidate A — Multi-Jurisdiction Corporate Insolvency / Distress-Event API
+### *The strongest candidate produced by either round*
+
+**Product.** Normalised, real-time API + webhook feed of corporate insolvency filings from national gazettes. Launch **France (BODACC), UK (The Gazette), Spain (BORME)**; add Italy, Netherlands, Portugal later. **Germany deliberately excluded at launch** — see risk.
+**Buyer.** Credit-risk teams, trade-credit insurers, factoring and invoice-finance firms, debt collectors, procurement risk teams extending credit into Europe.
+**Price: US$300/month** (or usage tiers for higher volume). **Six customers = target.**
+
+### Evidence pack
+1. **GitHub feature request open since 2024-06-05, still unresolved** — "API for Insolvenzbekanntmachungen", stating a private company finds it "very useful to be informed as soon as possible, if one of the business partners is experiencing insolvency proceedings". [S] github.com/bundesAPI/sofortmassnahmen/issues/81 — accessed 2026-09-03
+2. **A documented, quantified failure of the incumbent tools, May 2026:** a customer "approved a €40,000 line of credit to a Spanish company that had filed for insolvency eleven days earlier... the credit data API they were using hadn't picked it up yet". [S] medium.com/@matiasmaquieira96 — accessed 2026-09-03
+3. **Three separate developers built the same German insolvency scraper and abandoned it** — Apify's listing is marked **"[DEPRECATED]"**, alongside three unmaintained GitHub repos. [S] — accessed 2026-09-03
+4. Incumbent aggregators "license bulk corporate data feeds rather than running their own jurisdiction-specific scrapers", producing refresh lags of **3 to 21 days, longer in smaller jurisdictions**. [S] — accessed 2026-09-03
+5. Three recent entrants monetising the same thesis (below) — proof of commercial interest, not an empty room.
+
+> **Why signal 3 is the most important line in this document.** Three capable people built this and quit. That is the maintenance moat stated as evidence rather than as theory — and it is only available to this operator because the ceiling moved from 3 hrs/week to 20.
+
+### Competitors — nascent, not empty
+| Competitor | Coverage | Pricing |
+|---|---|---|
+| Prometiam Risk API | ES/UK/FR live | **Not published** — founder says the aim is beating "platforms charging fifty times more" |
+| Insolvencies.live | ES/UK/FR live; DE/IT/NL/PT roadmap | **Not published** |
+| getregdata | 29 registry actors incl. insolvency watchlist | **$0.003–$0.01 per result**, pay-per-result |
+
+**Read:** three entrants in ~18 months, none with published pricing, all stuck at the same three countries. Demand has been noticed but not consolidated.
+
+### Legality — checked, and it decides the launch sequence
+- **France (BODACC): CLEAR.** Licence Ouverte 2.0 permits "free commercial reuse, including redistribution and incorporation into derivative products, with source attribution". [S] data.gouv.fr
+- **UK (The Gazette): CLEAR for corporate notices.** OGL v3.0, but **personal data is expressly excluded** — so corporate insolvency only, not individual bankruptcy.
+- **Spain: legally clear, technically harder.** Law 37/2007; **no official REST API**, so scraping is required.
+- **Germany: EXCLUDED AT LAUNCH.** German DPAs are in active discussion with the NRW Ministry of Justice to "make it more difficult for private providers of portals to extract insolvency data". Unsettled law, not a green light.
+
+### Bottom-up market math
+```
+Reachable buyers  = UNVERIFIED count, but enumerable by name and title:
+                    credit-risk managers, trade-credit underwriters,
+                    factoring/invoice-finance ops staff
+Price             = US$300/mo                                  [ESTIMATE]
+Customers needed  = 1800 / 300 = 6                             [ESTIMATE]
+Gross signups     = ~8 over 12 months, ~0.7/month              [ESTIMATE, 5% churn]
+```
+> **Six customers.** Against a European credit-risk buyer pool that certainly numbers in the thousands, this is the lowest-penetration requirement of any candidate in either round.
+
+**Why now.** Three entrants in 18 months; a dated €40,000 loss (May 2026); incumbents structurally lagging 3–21 days because they license bulk feeds rather than scraping.
+
+**Clone resistance — Tier 1.** Each jurisdiction is a separate parser in a different language and format with a different cadence, plus ongoing legal monitoring. **2–4 months to reach the three-country parity the competitors already have; 6–12 months for five to seven.** Staying current is permanent. A cloner must redo it *and sustain it* — and the evidence says people quit.
+
+**Steady-state hours/week: 8–12.** Well inside the 20-hour ceiling.
+
+**Fulfilment test: PASSES.** Customer seven costs nothing extra — the same feed serves all customers. This is the cleanest pass of any candidate in either round.
+
+### Rubric
+| Criterion | Wt | Score | Justification |
+|---|---|---|---|
+| Verified demand evidence | 20 | **15** | An open GitHub request, a documented €40k loss, three abandoned scrapers, and three funded-enough entrants. **The only candidate in either round with real user-voice evidence.** |
+| Distribution | 20 | **15** | Buyers enumerable by name and title via LinkedIn and trade bodies; only six needed; compliant cold email is the whole plan |
+| Willingness to pay | 15 | **12** | A €40k loss trivially justifies US$300/mo; three competitors monetising |
+| Defensibility | 10 | **7** | Tier 1, time-accumulated; 2–4 months to parity, 6–12 to lead; evidenced by abandonment |
+| Passivity ceiling | 10 | **8** | 8–12 hrs/wk against a 20-hr allowance |
+| AI-agent buildability | 10 | **8** | Scrapers, normalisation, API, webhooks — conventional. Spain's lack of an API adds work |
+| Time to first customer | 8 | **6** | Fast: technical B2B buyer, no marketplace gate, direct outreach |
+| Platform & regulatory risk (inverted) | 7 | **4** | Germany contested; UK excludes personal data; sources can change terms unilaterally |
+| **TOTAL** | **100** | **75** | ✅ **Clears the 65 bar** |
+
+---
+
+# Candidate B — Insurance Producer Licence & CE Compliance
+
+**Product.** Multi-state producer licence, appointment and CE renewal tracking for independent agencies with 5–30 licensed producers. **Price US$400/month per agency** (flat, versus incumbents' per-producer pricing).
+
+### Evidence pack
+1. **AgentSync average annual contracts >$100k, up to ~$370k**, *before* the required Salesforce licensing; a reviewer notes "for the cost, we expected a more comprehensive and adaptable solution". [S] g2.com — accessed 2026-09-03
+2. Sircon users cite a **$22.50/mo base plus per-agent cost**, "steep to small setups", one saying "the prices are insane on top of that". [S] sourceforge.net — accessed 2026-09-03
+3. **Two live job ads** — "Insurance License and Compliance Coordinator" (Chicago) and "Insurance Licensing Coordinator" (Brownsville) — the manual version being hired for right now. [S] indeed.com — accessed 2026-09-03
+4. Trade press, Aug 2026: "Producer compliance platforms face a new test on cost". [S] fintech.global — accessed 2026-09-03
+5. Nebraska adds retaliatory non-resident fees effective **July 2026**; complexity is rising. [S] agenzee.com — accessed 2026-09-03
+
+**Competitors.** AgentSync (quote-only, requires Salesforce, $100k+/yr); Sircon/Vertafore (base + per-producer); Advantage/XLSoft (~$40–80/producer/mo, annual contracts); State Based Systems (no public pricing).
+
+**Bottom-up math.** `1800 / 400 = 5 customers` [ESTIMATE]. Enumerable via the **NAIC public License Manager**, state DOI licensee lookups, and Big I chapter directories.
+
+**Clone resistance — Tier 1.** 50-state renewal calendars, CE rules and NIPR/NAIC feed handling is exactly the accumulating grind, plus a buyer segment beneath AgentSync's enterprise sales motion (Tier 2 as well).
+
+**Steady-state: 8–10 hrs/week. Fulfilment test: PASSES.**
+
+**The wound.** The product depends on **NIPR/NAIC data access, whose authorisation requirements and terms are unverified.** If bulk or programmatic access requires an industry authorisation a solo foreign vendor cannot obtain, the idea is dead on day one. This is a single point of failure and it is unresolved.
+
+| Criterion | Wt | Score | Justification |
+|---|---|---|---|
+| Verified demand evidence | 20 | **13** | Two job ads and two pricing complaints — good, but less acute than A's documented loss |
+| Distribution | 20 | **14** | NAIC License Manager and DOI lookups make prospects highly enumerable; only five needed |
+| Willingness to pay | 15 | **12** | $100k+/yr contracts upmarket prove enormous spend |
+| Defensibility | 10 | **7** | Tier 1: 50-state calendars and feed handling |
+| Passivity ceiling | 10 | **8** | 8–10 hrs/wk |
+| AI-agent buildability | 10 | **6** | **Gated on NIPR/NAIC access terms — unverified and potentially blocking** |
+| Time to first customer | 8 | **5** | 3–4 months |
+| Platform & regulatory risk (inverted) | 7 | **3** | Single point of failure on a data-access relationship not yet confirmed |
+| **TOTAL** | **100** | **68** | ✅ Clears, but on a gated premise |
+
+---
+
+# Candidate C — EPR Obligation-Mapping API
+
+**Product.** Data-only API answering "which packaging/WEEE/battery EPR registrations does product category X require in country Y, at what fee, threshold and deadline". **Explicitly not the registration service.** **Price US$300/month.**
+
+### Evidence pack
+1. "Amazon does not handle your EPR compliance"; consequences include **"listing suspension... withheld payouts... full market exclusion"**. [S] avask.com — accessed 2026-09-03
+2. eBay publishes its own EPR regulation page for sellers. [S] export.ebay.com — accessed 2026-09-03
+3. Fragmentation documented: a Spanish seller shipping to DE/FR/IT/NL "may need four separate EPR registrations"; France's system "takes no account of small businesses"; fees range **$10 in Germany to over $165 in France**. [S] minefieldnavigator.com — accessed 2026-09-03
+4. **PPWR adds fresh obligations from 12 August 2026.** [S] tracextech.com — accessed 2026-09-03
+
+**Competitors — and why the space is empty.** AVASK, Minefield Navigator and EPR-Register® all monetise the **manual registration service**. **NO EVIDENCE FOUND** of a self-serve data API. Per the brief's rule I must explain the emptiness rather than celebrate it: **the incumbents' business model is the explanation — selling the data would disintermediate the service they actually sell.** That is a satisfying explanation, and it is also a warning, because any of them could add a data tier defensively.
+
+**Bottom-up math.** `1800 / 300 = 6 customers` [ESTIMATE]. Buyers: compliance managers at named 3PLs and seller aggregators — **one 3PL account represents many downstream sellers**, which is real leverage.
+
+**Clone resistance — Tier 1 but thinner.** 10+ EU countries plus US states (California, Colorado, Oregon, Maine, Minnesota, Washington), each periodically revised. Initial build 3–4 months.
+
+**Steady-state: 6–10 hrs/week. Fulfilment test: PASSES.**
+
+**The wound. Licence terms are NOT confirmed for any national PRO fee schedule.** No prohibition was found, but neither was permission. For a product whose entire substance is redistributed regulatory data, that is the decisive unknown.
+
+| Criterion | Wt | Score | Justification |
+|---|---|---|---|
+| Verified demand evidence | 20 | **12** | Strong consequence evidence, but **no direct "I would pay for this"** found |
+| Distribution | 20 | **13** | 3PLs and aggregators enumerable; leverage via one account serving many sellers |
+| Willingness to pay | 15 | **10** | Listing suspension and withheld payouts are severe; but incumbents sell service, not data |
+| Defensibility | 10 | **6** | Tier 1 but thinner — regulatory facts, widely published |
+| Passivity ceiling | 10 | **8** | 6–10 hrs/wk, the lowest of the three |
+| AI-agent buildability | 10 | **8** | Mostly structured research and data modelling; low technical risk |
+| Time to first customer | 8 | **5** | Moderate |
+| Platform & regulatory risk (inverted) | 7 | **3** | **Redistribution licence unconfirmed** — the decisive unknown |
+| **TOTAL** | **100** | **65** | ✅ Exactly at the bar |
+
+---
+
+## Round-2 scoreboard
+
+| Candidate | Demand /20 | Distrib /20 | Pay /15 | Defens /10 | Passive /10 | Build /10 | Speed /8 | Risk /7 | **Total** |
+|---|---|---|---|---|---|---|---|---|---|
+| **A — Insolvency API** | 15 | 15 | 12 | 7 | 8 | 8 | 6 | 4 | **75** |
+| **B — Producer licensing** | 13 | 14 | 12 | 7 | 8 | 6 | 5 | 3 | **68** |
+| **C — EPR mapping API** | 12 | 13 | 10 | 6 | 8 | 8 | 5 | 3 | **65** |
+| *(R1 best — NZ retention)* | *12* | *14* | *10* | *4* | *7* | *9* | *4* | *4* | *64* |
+
+> ### **All three clear the 65 bar. Candidate A clears it by ten points.**
+> Round 1 produced nothing above 64. The difference is **not** better searching — it is the constraint change. Raising the ceiling from 3 to 20 hrs/week made the maintenance-moat class available, and that is where the Tier 1 defences live. **Defensibility rose from 4/10 to 7/10**, which is the single largest movement in the whole engagement.

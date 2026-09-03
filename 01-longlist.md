@@ -173,3 +173,40 @@ Signal: real complaints that reminder cards "are not getting to the clients" and
 
 ## Coverage gaps in this longlist (stated, not hidden)
 The session's web-search budget (200/200) was exhausted before these were reached: idea-level signals for **Notion, Figma, Monday.com, Airtable and Webflow**; trades certification/licence-expiry trackers; self-storage lead follow-up; commercial-cleaning quoting; equipment/plant-hire booking; sports-club vetting trackers. **No primary Reddit thread content was retrievable for any subreddit** — every attempt returned aggregator or Capterra pages instead. The brief asked for forum-level user voice and I largely could not obtain it; that is a genuine shortfall against §6 of the brief, not a completed search.
+
+---
+---
+
+# ROUND 2 ADDITIONS (2026-09-03) — global/online only, 20 hrs/week
+
+**45. Multi-jurisdiction corporate insolvency / distress-event API** ⭐ **SELECTED**
+Normalised real-time feed of insolvency filings from national gazettes (FR/UK/ES). Signal: GitHub request open since **2024-06-05**; documented **€40,000 credit line extended to a company that had filed 11 days earlier** because the incumbent API missed it (May 2026); **three separate abandoned German scrapers** incl. a **DEPRECATED** Apify actor [S].
+
+**46. Insurance producer licence & CE compliance (5–30 producer agencies)**
+Signal: **AgentSync contracts average >$100k/yr, up to ~$370k**, before required Salesforce licensing [S] g2.com; Sircon pricing called "insane"; **two live job ads** for the manual role [S].
+
+**47. EPR obligation-mapping API for cross-border e-commerce**
+Signal: "Amazon does not handle your EPR compliance" — consequences include **listing suspension, withheld payouts, full market exclusion** [S]; fees **$10 (DE) to $165+ (FR)**; **PPWR obligations from 12 Aug 2026** [S].
+
+**48. Freight carrier-fraud vetting for small brokerages** — **CUT ON LIABILITY, best raw demand in the project**
+Signal: cargo theft **~$725M in 2025, up 60% from $455M**; FMCSA double-brokering complaints **8,000+ in 2025 vs ~2,000 in 2021**; **15,419 broker authorities revoked** [S]. But Truckstop RMIS Lite already at **$340/mo**, and a solo vendor cannot price the liability.
+
+**49. Make.com first-native-app for an underserved vertical** — **CUT, but the only structural exclusivity found**
+Make "will only accept an app if [the incumbent] is not actively developing it" [S] developers.make.com. **Buildium is not on Zapier at all**; property managers reportedly spend **$8,400–$14,200/yr** on middleware workarounds [S]. Cut because **Make has no payments rail** — the defensible asset doesn't monetise.
+
+**50. Chemical / cosmetic ingredient regulatory-status API** — **CUT ON LICENCE**
+**ECHA legal notice: CAS numbers/names are "the property of the American Chemical Society and any use or redistribution... is not permitted without... prior written permission"** [S] echa.europa.eu/legal-notice.
+
+**51. Notion compliance-grade backup** — weak moat
+A solo founder runs "Notion Backups" at ~**US$2,300 MRR** [SELF-REPORTED]. But SimpleBackups ($49–299/mo), ProBackup and BackupLABS compete, and clone resistance is LOW.
+
+**52. HubSpot silent workflow-failure alerting** — **CUT**
+Ideas thread active **19 Sept 2025**; native tooling is passive log review [S]. But it is an obvious low-effort HubSpot feature — highest absorption risk found.
+
+**53. Webflow post-sunset subscription reconciliation**
+**Webflow sunset native User Accounts 29 Jan 2026**, forcing customers onto Memberstack/Outseta [S]. Vendor-neutral reconciliation across Stripe + membership platform + CMS.
+
+**54–59. Round-2 rejects:** EU procurement debarment aggregator (**Germany's Wettbewerbsregister has no public API**, bulk redistribution not intended); e-invoicing mandate tracker (**free trackers already exist** covering 126–130 countries); product recall aggregation (**SuperRecall.ai $449/mo, 60+ countries**); sanctions/PEP screening (**free OpenSanctions** + ComplyAdvantage $99.99/1000); VAT rate APIs (**TaxRates.io $9/mo**); company registry aggregation (Sayari, Orbis, Creditsafe, from €0.05/request); ISO 17025 / LIMS (**$50k+/yr but no complaints or job ads found**); clinical-trial eISF (**Veeva SiteVault has a free tier**); US professional licence lookup (Apify actors, all 50 states); DOT driver-qualification files ($30–150/mo, served); medical credentialing ($50–200/mo, served); UK right-to-work (£149/mo unlimited); government tender monitoring (HigherGov $500–2,500/yr, GovTribe $1,350–4,000/yr already serve small tier); IOLTA for solo attorneys (Clio, CosmoLex, LeanLaw, PCLaw, Soluno).
+
+## Round-2 marketplace mechanics — the finding that saves months
+**Most platform marketplaces have no payments rail at all.** Only **monday.com** (built-in Stripe, mandatory since July 2024) offers one to a new solo developer. **Figma is CLOSED to new paid sellers.** **Discord's rail excludes NZ developers** (US/UK/EU only). Notion, Airtable, Webflow, Slack, Zapier, Make and HubSpot are **discovery-only**. **ClickUp has no third-party marketplace at all.** Full table in `research/marketplace-payments-rails.md`.

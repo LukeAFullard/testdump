@@ -129,3 +129,79 @@ Cut as a subscription above, but the *reconciliation* half is carried forward to
 ## Summary of Stage 3
 
 **Six killed outright. Three carried forward, all wounded.** No candidate emerged from the kill stage undamaged — which is itself the honest headline of this run and is dealt with directly in `04-recommendation.md`.
+
+---
+---
+
+# ROUND 2 — Re-run under the revised constraints (2026-09-03)
+
+Constraints changed: **forget NZ, global/online only, ceiling raised 3 → 20 hrs/week.** The round-1 winner is dead (NZ-specific). This is a fresh cull against a **new gate defined *before* the results arrived** (`research/selection-filter-v2.md`), so it cannot have been retrofitted to a favoured answer.
+
+## The gate: what KIND of defence does the candidate have?
+
+Six spot checks established that "a bad, expensive incumbent" is no longer evidence of an opening — in all six cases self-serve entrants already occupied the gap. So each candidate is first classified by moat type:
+
+- **Tier 1 — time-accumulated.** A competitor must *spend time* to match it. Un-backfillable history; per-jurisdiction integration work; reputation where being wrong is expensive.
+- **Tier 2 — structurally awkward.** Hard-to-reach buyers; regulatory or approval gates; a platform exclusivity rule; a market too small to interest a funded competitor.
+- **Tier 3 — insight-based. AUTOMATIC REJECT.** "The incumbent is expensive and badly reviewed." "There's no self-serve tier." "We'll execute better."
+
+## The round-2 eight
+
+| # | Candidate | Moat tier |
+|---|---|---|
+| 1 | Multi-jurisdiction corporate insolvency / distress-event API | **Tier 1** |
+| 2 | Insurance producer licence & CE compliance (small agencies) | **Tier 1** |
+| 3 | Freight carrier-fraud vetting (small brokerages) | Tier 3 → 1? |
+| 4 | EPR obligation-mapping API for cross-border e-commerce | **Tier 1** |
+| 5 | Make.com first-native-app for an underserved vertical | **Tier 2** |
+| 6 | Chemical / cosmetic ingredient regulatory-status API | Tier 1 |
+| 7 | Franchisor royalty compliance (<20 units) | Tier 3 |
+| 8 | HubSpot silent workflow-failure alerting | Tier 3 |
+
+---
+
+## ☠️ KILL — #8 HubSpot workflow-failure alerting
+**Case for failure.** Fails the gate at Tier 3. Polling an API for error states and firing a webhook is a straightforward AI-agent build with no accumulating asset. Worse, this is **an obvious, repeatedly-requested, low-effort HubSpot feature** — the Ideas thread has been open and active since at least Sept 2025, which means HubSpot knows and could ship it any quarter.
+**Rebuttal attempt.** Build breadth of failure-type detection and a SOC2-style change-log angle that survives basic native alerting.
+**Why it fails.** "They probably won't build it well" is a bet on a competitor's roadmap — the same non-answer the brief rejects. A 12–24 month window is not a business, it is a race with a company that owns the platform. **CUT.**
+
+## ☠️ KILL — #7 Franchisor royalty compliance
+**Case for failure.** Tier 3: the entire moat is "enterprise vendors deprioritise franchisors under 20 units". **No "why now"** — the agent searched and found none, and said so. Worse, royalty *auditing* implies per-customer analysis, which risks the fulfilment test: if customer seven arrives, does the operator's monthly work rise by a fixed amount? Probably yes.
+**Rebuttal attempt.** Underreporting costs franchisors 5–15% of royalty revenue and some brands have recovered over $1 million — the money is real.
+**Why it fails.** The money being real does not make the defence real. Any of the quote-only incumbents can add a small-franchisor tier in a quarter, and the product edges toward being an audit service with a login. **CUT.**
+
+## ☠️ KILL — #6 Chemical / cosmetic ingredient regulatory-status API
+**Case for failure.** A licence problem in the two largest jurisdictions. **ECHA's legal notice states that CAS numbers and names sourced via ECHA are "the property of the American Chemical Society and any use or redistribution... is not permitted without... prior written permission."** China's IECSC bulk data is a paid CIRS product. Maintenance was estimated at **10–15 hrs/week — at the ceiling** even under the new allowance.
+**Rebuttal attempt.** Key on EC numbers instead of CAS, and source CAS mappings independently.
+**Why it fails.** That is a real mitigation but it degrades the product precisely where buyers need it — regulatory staff search by CAS number. Building a compliance data product on a contested identifier is choosing to litigate your core index. **CUT on licence risk.**
+
+## ☠️ KILL — #5 Make.com first-native-app *(the most interesting kill in the project)*
+**Case for failure.** The moat is real and rare: Make "will only accept an app if [the incumbent developer is] not actively developing it", so the first native app for a service can lock out later native competitors. But three things break it. (1) **Make has no payments rail** — revenue must come from an adjacent "automation pack plus support" subscription, which is support-linear and edges into the fulfilment trap. (2) **Enforcement of the anti-duplicate policy is unverified** — it is documentation, not a contract, and I could not confirm how consistently it is applied. (3) The target vendor can ship its own integration, which **Tenant Turner just did in July 2025**.
+**Rebuttal attempt.** Get the native app live early, accumulate reviews and install base, and make switching costly through template breadth.
+**Why it fails.** The moat protects the *integration*, but the *revenue* lives in the automation pack, and nothing protects that. You would own a defensible asset that does not monetise, attached to a monetising asset that is not defensible. **CUT — but recorded as the only genuine structural exclusivity found in the whole project, and worth revisiting if Make ever ships a payments rail.**
+
+## ☠️ KILL — #3 Freight carrier-fraud vetting
+**Case for failure.** The demand evidence is the strongest dated set in the project — **US/Canada cargo theft ~$725M in 2025, up 60%; FMCSA double-brokering complaints 8,000+ in 2025 vs ~2,000 in 2021; 15,419 broker authorities revoked**. But: **Truckstop RMIS already publishes a Lite tier at $340/month**, sitting squarely in the proposed price band, and Highway is well funded. And the decisive problem is **liability**: fraud screening is a product where being wrong costs the customer a stolen load. A solo operator with no professional indemnity cover, telling a brokerage a carrier is safe, is accepting a risk they cannot price.
+**Rebuttal attempt.** Accumulate proprietary fraud-signal history over time, which would convert the moat from Tier 3 to Tier 1 and also justify the price.
+**Why it fails.** The accumulation argument is genuinely good and nearly saves it. But it does not arrive until year two, while the liability exists from customer one. **CUT on liability, not on demand.** If the operator can obtain suitable insurance and a robust limitation of liability, this deserves reconsideration — it has the best raw demand evidence found.
+
+---
+
+## 🩸 SURVIVORS — carried to deep dive
+
+### #1 Multi-jurisdiction insolvency API — survives strongly
+**Kill attempt.** Three competitors entered in the last ~18 months (Prometiam, Insolvencies.live, getregdata) so this is nascent, not empty. Germany is legally contested. Spain has no official API and requires scraping.
+**Rebuttal.** Nascent-with-three-recent-entrants is a *better* signal than emptiness — it is demand that has been noticed but not yet consolidated, and none of the three has published pricing or achieved coverage beyond the same three countries. The German fight is avoidable by launching FR/UK/ES, where **France's Licence Ouverte 2.0 explicitly permits commercial redistribution**. Spain's scraping requirement is a *cost*, which under a 20-hour ceiling is a moat rather than a blocker. **Survives.**
+
+### #2 Insurance producer licensing — survives
+**Kill attempt.** The whole product depends on NIPR/NAIC data access, whose terms and authorisation requirements are **unverified and could be fatal**. "Why now" is only moderate.
+**Rebuttal.** The Tier 1 moat is genuine — 50-state renewal calendars are exactly the accumulating grind — and **AgentSync's $100k+/yr average contracts requiring a Salesforce licence** prove enormous willingness to pay upmarket, with two live job ads showing the work being done by hand today. **Survives, with the data-access question as its gate.**
+
+### #4 EPR obligation-mapping API — survives, wounded
+**Kill attempt.** **Licence terms are not confirmed for any national PRO fee schedule.** No direct "someone will pay for this" quote was found.
+**Rebuttal.** The emptiness has a business-model explanation that passes the brief's own test: every incumbent monetises the *manual registration service*, so none of them wants to sell the data that would disintermediate them. **PPWR obligations from 12 August 2026** give a dated why-now. **Survives on the weakest evidence of the three.**
+
+---
+
+## Round-2 summary
+**Five killed, three survive — and unlike round 1, the survivors are not all wounded in the same place.** The difference is entirely attributable to the constraint change: raising the ceiling to 20 hrs/week made the maintenance-moat class available, and that class is where the Tier 1 defences live.

@@ -1,106 +1,100 @@
-# 04 — Recommendation
+# 04 — Recommendation (Round 2, 2026-09-03)
 
-**Run date 2026-09-03.**
-
----
-
-## The headline, stated plainly
-
-> ## Still nothing clears your 65-point bar — but the best candidate now scores 64, not 62, and the remaining gap is closable by evidence rather than structure.
-> I moved exactly two criteria by one point each and can name the reason for both. I deliberately did not award the third point that would have produced a satisfying 65.
-
-**Revised 2026-09-03** after three clarifications: the target is **NZ$3,000/month (≈US$1,800)**, geography is **open**, and compliant cold email plus trade-forum posting are **acceptable**. All three help, and the first two help a lot.
-
-**What actually changed.** The currency clarification nearly halved the job: **2.3 new customers per month instead of 3.7** — roughly one new customer every 13 days for a year. And at that target, the TAM unknown that was the primary wound shrinks from "needs a pool of ~1,500" to "needs a pool of ~800". It is no longer the dominant risk.
-
-**Conditional recommendation: Candidate A — the Construction Retention-Money Trust Compliance Ledger, starting in NZ and expanding to Australia — subject to a hard Phase 0 gate costing about NZ$0–200 and roughly 12 hours.**
-
-**The one criterion still holding it below the bar is verified demand evidence (12/20) — and that is precisely what Phase 0 exists to fix.** Three of ten interviewees describing genuine pain moves it to 15+ and the total to 67. If Phase 0 fails, stop; the plan is written to make stopping easy.
+*Round 1's recommendation is preserved as `04-recommendation-ROUND1-SUPERSEDED.md`. It was NZ-specific and died with the constraint change.*
 
 ---
 
-# The bear case (written first, as instructed)
+## The headline
 
-**1. The demand is inferred from a statute, not observed in a human being.**
-This is the most serious flaw and it maps exactly onto your own definition of "validated". I verified that the law exists, that it is binding, and that penalties reach $200,000 per offence plus $50,000 per director. I did **not** find a single NZ contractor saying this is painful, a single review complaining about existing tools, or a single forum thread asking for a better option. Every attempt to retrieve primary forum content in this run failed. A legal obligation is a *reason* someone might buy; it is not evidence that they will.
+> ## Recommendation: build the **Multi-Jurisdiction Corporate Insolvency API**. It scored **75/100** against your 65 bar — the first candidate in this engagement to clear it, and it clears by ten points.
 
-**2. Nobody knows how big this market is — including me.** *(Reduced, not eliminated, by the revision.)*
-There is still no verified count of NZ businesses that hold retention money. Most construction firms are sole traders who *receive* retentions rather than hold them. At the confirmed NZ$3,000 target the threshold drops from a pool of ~1,500 to ~800, and Australia is available as a second market — but **a pool under ~400 still kills this**, and I could not resolve the number. The expansion path to Australia rests on a competitor's own marketing claim that retention regimes are "AU/NZ/UK legislation-matched", which I could not verify.
+Round 1's best was 62, then 64 after your clarifications. Nothing cleared. **The difference is not that I searched harder. It is your third constraint change.** Raising the ceiling from 3 to 20 hrs/week made an entire class of business available — the class whose defence is accumulated maintenance work — and that is where every Tier 1 moat in this project turned out to live. Defensibility moved from 4/10 to 7/10, the largest single movement in the whole engagement.
 
-**3. The moat is thin and I am not going to dress it up.**
-Trust-ledger arithmetic and a quarterly report format are not hard. An AI coding agent builds this in weeks — which means anyone else's AI coding agent also builds it in weeks. The honest defence is correctness, accumulated reviews, and NZ-specific regulatory attention. The *real* protection is that the market is probably too small for a serious competitor to bother with — which is the same fact as "this business likely caps out at US$3–10k/month". Those are not two findings; they are one finding wearing two hats.
-
-**4. It sits exactly on your 3 hrs/week ceiling, not comfortably under it.**
-My estimate is ~3.0 hrs/week at steady state. Estimates like that are usually optimistic.
-
-**5. Five competitors already exist in the adjacent space, and I could not price any of them.**
-Retention Track, Payapps, Gojee, Workbench and RemitClear all touch retentions. I could not verify a single price for any of them, which means the pricing strategy in `03-deep-dives.md` rests on value logic rather than market evidence.
-
-**6. The base rates are still hostile, though less so than at the original target.**
-**54% of tracked indie products earn $0. 70% of micro-SaaS earn under US$1,000/month. The median is about US$500/month.** NZ$3,000 ≈ **US$1,800/month**, which still sits above that median and above the 70% band — but it is no longer the top-10–20% outcome that US$3,000 would have been. Call it roughly a top-quartile result. The cleanest genuinely-zero-audience comparable found made about **US$40,000 total revenue over 14 months**, which is in the same territory as this target rather than far below it. **That is a real improvement in plausibility, and it is the single biggest effect of the currency clarification.**
-
-**7. Your 12-month target is still probably 12–18 months, and possibly never.**
-The lower target improves the odds but does not change the shape of the distribution. Most attempts fail. I would rather say it now.
-
-**8. My research was materially degraded and you should discount accordingly.**
-Page fetching was blocked entirely, and the session's search budget was exhausted. **No claim in any of these documents was verified by opening the source page.** Several planned searches never ran. Notion, Figma, Monday.com, Airtable and Webflow were never examined at all. This is not a complete search of the space and should not be treated as one.
+**The product.** A normalised, real-time API and webhook feed of corporate insolvency filings from national gazettes. **Launch France, UK and Spain. Deliberately exclude Germany.**
+**The buyer.** Credit-risk teams, trade-credit insurers, factoring and invoice-finance firms, procurement risk teams extending credit into Europe.
+**The price.** US$300/month. **Six customers is the entire twelve-month goal.**
 
 ---
 
-# The case for it anyway
+# The bear case (first, as instructed)
 
-Against that, four things are true, and they are the reasons this is still the pick.
+**1. Three competitors got here before you, all within about eighteen months.**
+Prometiam, Insolvencies.live and getregdata are all live. You are not first. You are fourth into a space that has been noticed. None publishes pricing and all three are stuck at the same three countries, which is why I still rate it — but "nascent" is a nicer word for "already contested", and by the time you ship there may be six.
 
-**1. The forcing function is real, verifiable, severe, and recurring.**
-Retention money must sit in a separate trust account. Quarterly reports to every subcontractor are mandatory. Penalties reach $200,000 per offence and $50,000 per director. Unlike a checklist that a business does once, **the quarterly reporting obligation recurs forever** — which is the subscription shape almost every other candidate lacked. This is the only survivor whose legal obligation and revenue model point the same way.
+**2. Germany — the largest economy in the target region — is legally contested and excluded.**
+German data-protection authorities are actively working with the NRW Ministry of Justice to make it *harder* for private providers to extract and republish insolvency data. That is a live regulatory fight, not settled law. Excluding Germany is the right call and it costs you the biggest market in Europe.
 
-**2. It is the operator's home market, and that advantage is real rather than sentimental.**
-Right timezone, so async support is genuinely async rather than a 12-hour lag. A credible local vendor rather than an anonymous offshore one. Reachable trade associations. No cross-border VAT/GST exposure — recall that the UK has a **nil VAT threshold** for non-established sellers and the EU charges from the first euro, both of which this sidesteps entirely by selling NZ-domestic B2B. Every other candidate required selling into a market where the operator is a stranger at an awkward hour.
+**3. Your sources can revoke access unilaterally and you would have no recourse.**
+This is the failure mode with the best-documented history in this whole project: Twitter 2023, Reddit 2023, the Reddit `.json` shutdown in 2025–26, Salesforce revoking all Gainsight tokens with no notice in Nov 2025. A government gazette is more stable than a commercial API — but Germany proves the direction of travel is toward restriction, not openness.
 
-**3. The incumbents are visibly weak, not merely present.**
-**Retention Track — the closest-positioned competitor — had zero reviews.** None of the five existing tools is a pure compliance product; they are job-management platforms with retention bolted on. That is a genuine underserved segment inside an occupied market, which is exactly the definition of "low competition" your brief demanded — as opposed to the empty-market red flag it warned against.
+**4. Spain requires scraping, and scrapers break.**
+There is no official REST API. That is ongoing, unglamorous, brittle work. I have argued this is the moat; it is also genuinely the job, most weeks, forever.
 
-**4. It survives the kill questions better than anything else found.**
-It is not being absorbed by an incumbent's free tier (unlike AU Payday Super). Its buyer is not also its cloner (unlike the Xero egress monitor). It is not gated on a deadline that expires before launch (unlike Companies House). It is not one-off (unlike the LTMP builder). It is not consumer-priced (unlike the landlord dashboard).
+**5. Being wrong is expensive, and you have no professional indemnity cover.**
+A customer extends credit because your feed said a company was solvent. If you missed a filing, they lose real money. The €40,000 example that makes this idea compelling is the same example that describes your liability exposure. **Get limitation-of-liability terms drafted before the first customer, and price insurance in.**
+
+**6. The base rates have not changed.**
+54% of tracked indie products earn $0. 70% of micro-SaaS earn under US$1,000/month. NZ$3,000 ≈ US$1,800/month is still an above-median, roughly top-quartile outcome, and most attempts fail.
+
+**7. My evidence is thinner than it looks.**
+**Page fetching was blocked all session.** Every licence claim above — including France's Licence Ouverte permitting commercial redistribution, and the German dispute — rests on **search-result snippets, not the licence text itself.** For a business whose entire viability turns on redistribution rights, that is not good enough to build on. **Verifying those three licences by reading them is the first task, and it could kill this outright.**
+
+---
+
+# The case for it
+
+**1. It has the only real user-voice evidence in the engagement.**
+Round 1 candidates were justified by statutes. This one has a GitHub request open since June 2024, and a founder's May 2026 account of a customer extending **€40,000 to a company that had filed for insolvency eleven days earlier** because their existing API had not caught it. That is a named buyer with a quantified loss.
+
+**2. Three people built this and quit — which is the moat, demonstrated.**
+The German scraper exists as a **DEPRECATED** Apify actor and three unmaintained GitHub repos. Three capable developers solved it and abandoned it, because keeping jurisdiction-specific parsers alive is a grind. **That is the answer to "what stops someone cloning this in three weeks" — nothing stops them building it; the evidence says they stop maintaining it.** An AI coding agent shortens the build and does nothing for the twenty-fourth month.
+
+**3. Six customers.**
+At US$300/month the entire target is six businesses, roughly one every seven weeks, from a European credit-risk buyer pool numbering in the thousands and enumerable by name and title on LinkedIn and through trade bodies. That is the lowest penetration requirement of anything in either round, and it is a prospecting task, not a marketing one.
+
+**4. It passes the fulfilment test cleanly.**
+Customer seven costs nothing extra. One feed serves everyone. Under a 20-hour ceiling the temptation is to drift into an agency; this product structurally cannot.
+
+**5. Incumbents are structurally, not incidentally, slow.**
+Large aggregators license bulk feeds rather than running jurisdiction-specific scrapers, so they lag **3 to 21 days**. That is an architectural choice they will not reverse for a small segment — the most durable kind of incumbent weakness.
 
 ### Why it beat the other two
-- **Beat Candidate B (AU Payday Super, 56)** on platform risk and passivity. B's feature absorption by Xero and MYOB is not a risk — it is already happening, and the buyer already owns the software doing the absorbing. B also breaches the hours ceiling at 3–4 hrs/week.
-- **Beat Candidate C (Xero egress monitor, 55)** on defensibility and platform risk. C has the best pain evidence in the entire run and the worst structural position: Xero can delete the product by shipping one dashboard feature, and the customer is a developer who can build it themselves in a weekend.
+- **Beat B (producer licensing, 68)** on the gate. B's entire product depends on NIPR/NAIC data access whose terms I could not verify — a single point of failure that could be fatal on day one. A's equivalent question (licences) is at least answerable from public documents.
+- **Beat C (EPR mapping, 65)** on evidence and defensibility. C has **no direct "I would pay for this"** anywhere, and its redistribution licence is unconfirmed for every jurisdiction rather than confirmed for two of three.
 
 ---
 
 # When a runner-up would have been the better call
 
-**Choose B (AU Payday Super) instead if:** Phase 0 shows the NZ retention pool is under ~400 businesses **and** Australia turns out to have no comparable retention regime to expand into. Australia's market is roughly 5× larger, and a smaller share of a bigger market beats a large share of a market that does not exist. Accept in exchange that you are racing Xero and MYOB to a feature they are already shipping, and that the hours ceiling will break.
+**Choose B (producer licensing) if:** licence verification kills A, *and* NIPR/NAIC turns out to grant reasonable programmatic access. B has a bigger, richer buyer and the strongest proof of spend in the project (**AgentSync contracts averaging over $100k/yr**). Its wound is one phone call away from being resolved or fatal — find out early.
 
-**Choose C (Xero egress monitor) instead if:** you are willing to trade durability for speed, and you want revenue inside 60 days rather than 5 months. It has the fastest time-to-first-customer, the lowest support load, and a genuinely quantified pain ($17,000/year). Treat it explicitly as a **12–18 month cash play that Xero will probably kill**, not as a business to hold. Given the operator profile — no audience, limited hours, wants durability — I do not recommend this, but it is the rational pick for someone optimising for speed over longevity.
+**Choose C (EPR mapping) if:** you want the lowest maintenance load (6–10 hrs/wk) and the cleanest legal story once verified, and you value the **12 August 2026 PPWR** deadline as a live hook. Accept weaker demand evidence.
 
-**Choose none of them if:** Phase 0 fails on Candidate A and you are unwilling to accept B's or C's named wounds. That is a respectable outcome. See below.
+**Reconsider freight carrier-fraud vetting if:** you can obtain professional indemnity insurance and enforceable limitation-of-liability terms. **It had the best raw demand evidence in the project** — cargo theft ~$725M in 2025, up 60%; FMCSA double-brokering complaints up from ~2,000 to 8,000+ — and I cut it on liability, not on market.
 
----
-
-# What additional research would change this answer
-
-Cheap, specific, and high-leverage — roughly 12 hours and almost no money.
-
-### Would move Candidate A *above* the bar
-1. **Get user voice — now the single highest-leverage action.** Ten conversations with NZ head contractors or their bookkeepers about how they currently handle the trust ledger and quarterly reports. **If three describe it as painful and current tools as inadequate, demand evidence moves from 12 to 15+ and the total to 67 — clearing the bar.** This is the only criterion still holding it down, and it costs nothing but time.
-2. **Resolve the denominator.** The number of NZ businesses holding retention money. Sources: MBIE construction sector statistics, Stats NZ business demography by ANZSIC construction subclass, Registered Master Builders and Specialist Trade Contractors Federation membership counts. **At the revised target a pool above ~800 is sufficient.**
-3. **Verify whether Australia and the UK have comparable retention-trust regimes.** If they do, the small-TAM risk converts into a staged expansion plan and Australia (~5× the market, shared timezone) becomes the year-two target.
-3. **Price the incumbents.** Retention Track, Payapps, Gojee. This alone converts the pricing strategy from logic to evidence.
-4. **Confirm the Act's commencement and current obligations** with a NZ construction lawyer or MBIE directly. Removes the regulatory-risk deduction.
-
-### Would move it *below* the bar, and should be checked first
-1. **The pool is under ~400 businesses** → not a business. Stop. *(Threshold lowered from 800 with the revised target.)*
-2. **Xero or a major NZ construction platform ships retention-trust compliance natively** → kill-question 3 fires. Check the roadmaps.
-3. **The five incumbents already do this well and cheaply** → the "no pure compliance tool" premise collapses.
-
-### Would change the whole picture
-- **Re-run this research with page fetching enabled and a raised search budget.** Notion, Figma, Monday.com, Airtable, Webflow, trades certification trackers, self-storage, commercial cleaning and equipment hire were never examined. **The single highest-value action available is not building anything — it is finishing the search.**
-- ~~Confirm the currency of the target.~~ **Done — NZ$3,000 confirmed, and it was worth two points and half the required acquisition rate.**
+**Build nothing if:** the three licences do not verify and NIPR/NAIC is closed. That is a real possible outcome and it costs you two weeks to discover instead of six months.
 
 ---
 
-## What I would actually do, if you want it in one paragraph
+# What research would change this answer
 
-Spend the next two weeks on Phase 0 and nothing else. Do not write code. **Talk to ten NZ contractors or their bookkeepers** — that is now the highest-leverage action available, because verified demand is the only criterion still holding this below your bar. While you are at it, find the denominator and check whether Australia has a comparable retention regime. If three of ten describe real pain and the pool is above ~800, build it — and price it at **NZ$149/month, not NZ$79**, because that one decision cuts required acquisition from 4.4 customers a month to 2.3. Then plan on Australia as the year-two market, since it is roughly 5× the size and shares your timezone. If nobody cares or the pool is tiny, stop, and go finish the research that this session's blocked network and exhausted search budget prevented me from completing — with geography now open, the unsearched global field is a much larger prize than it was this morning.
+**Would confirm A (do these first, ~1 week, ~NZ$500):**
+1. **Read the actual licences** — Licence Ouverte 2.0 (France), OGL v3.0 (UK), Law 37/2007 (Spain). Confirm commercial redistribution of corporate insolvency notices, and confirm the UK personal-data exclusion does not swallow the corporate use case. **This is the single highest-value hour available and it can kill the project.**
+2. **A short opinion from an EU data lawyer** on the German position, and on whether it signals contagion to France or Spain.
+3. **Sign up to Prometiam and Insolvencies.live**, learn their real pricing, coverage and latency. You cannot position against competitors you have not used.
+4. **Ten conversations** with credit-risk or trade-credit underwriting staff: how do they learn a European counterparty has filed, how late is it, what would timely notice be worth?
+
+**Would kill A:**
+- Any of the three licences prohibits commercial redistribution → stop.
+- The German restriction turns out to be an EU-wide direction of travel → the whole category is a melting iceberg.
+- The three incumbents are already fast, cheap and well covered → you are fourth with no edge.
+
+**Still outstanding from earlier rounds:** Notion, Figma, Monday, Airtable and Webflow were finally examined this round; **trades certification tracking, self-storage, commercial cleaning and equipment hire were never reached.**
+
+---
+
+## What I would actually do
+
+Spend one week reading three licence documents and talking to two competitors' signup flows. If the licences permit redistribution, spend the following week on ten conversations with credit-risk staff. Only then write code — starting with France, because its licence is the clearest, and adding the UK and Spain once the first customer is paying. Price at **US$300/month from the first invoice**; do not launch at US$49 and hope to raise it. Leave Germany alone until the NRW dispute resolves, and say so publicly — being the vendor who is visibly careful about data protection is an asset with exactly this buyer.
+
+And get the liability wording drafted before customer one, not after.

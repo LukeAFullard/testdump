@@ -8,21 +8,29 @@
 
 | Field | Value |
 |---|---|
-| **Project** | **UNDECIDED — re-discovery in progress.** The previous pick (NZ construction retention-money ledger) is **SUPERSEDED**, see below |
-| **Current phase** | **Stage 1 re-discovery under revised constraints.** No candidate selected. |
+| **Project** | **GazetteFeed (placeholder) — Multi-Jurisdiction Corporate Insolvency / Distress-Event API** |
+| **Current phase** | **Phase 0 — Verify the licences. NOT STARTED.** |
 | **Last updated** | 2026-09-03 (second revision) |
 | **Updated by** | Research run (Claude Code session) |
-| **Next action** | **Complete re-discovery, then re-run Stages 2–6.** Three research agents are sweeping: maintenance-moat data products, the unsearched platform ecosystems, and high-price niche B2B with enumerable buyers. |
-| **Overall confidence** | **Unresolved.** No scored candidate under the current constraint set. |
+| **Next action** | **Read the actual text of three licences** — Licence Ouverte 2.0 (FR), OGL v3.0 (UK), Law 37/2007 (ES). Every licence claim in this repo is an unverified search snippet, and this single check can end the project. |
+| **Overall confidence** | **Moderate-to-good. Scored 75/100 against a 65 bar** — the first candidate in the engagement to clear it, and by ten points. |
 
-## 🔴 THE RECOMMENDATION IS SUPERSEDED — read this first
+## ✅ ROUND 2 COMPLETE — a candidate cleared the bar
+
+**Selected: a normalised, real-time API of corporate insolvency filings from national gazettes.** Launch **France → UK → Spain**; **Germany deliberately excluded** (active dispute between German DPAs and the NRW Ministry of Justice over private republication). Buyers: credit-risk teams, trade-credit insurers, factoring firms. **US$300/month — six customers is the whole twelve-month target.**
+
+**Why it won:** the only candidate with real user-voice evidence (a GitHub request open since June 2024; a documented **€40,000** loss from an API that missed a filing by 11 days), and a **Tier 1 time-accumulated moat demonstrated rather than argued** — three developers built the same German scraper and abandoned it, one listing now marked DEPRECATED. Nothing stops a cloner building it; the evidence says they stop maintaining it.
+
+**Read `04-recommendation.md` bear case first.** Chief risks: three competitors already entered in ~18 months; Germany excluded; **and every licence claim in this repo rests on search snippets because page-fetching was blocked all session.**
+
+## 🔴 ROUND 1 IS SUPERSEDED — historical record only
 
 On 2026-09-03 the operator revised three constraints:
 1. **Forget New Zealand.** No NZ-specific product, no NZ market.
 2. **Global / online-only business.** Not tied to any local market or physical-world industry.
 3. **Steady-state ceiling raised from 3 to 20 hrs/week.**
 
-**Changes 1 and 2 kill the previous recommendation outright** — the NZ construction retention-money ledger rested on NZ statute and was to be sold through NZ trade associations. Both foundations are gone. `04-recommendation.md` and `05-build-plan.md` are **historical records, not live plans.**
+Round 1's files are preserved as `04-recommendation-ROUND1-SUPERSEDED.md` and `05-build-plan-ROUND1-SUPERSEDED.md`. **Changes 1 and 2 killed that recommendation outright** — the NZ construction retention-money ledger rested on NZ statute and was to be sold through NZ trade associations. Both foundations are gone. `04-recommendation.md` and `05-build-plan.md` are **historical records, not live plans.**
 
 **Change 3 is the most consequential of the whole engagement** and is analysed in `00-brief-review.md` §6. In short: the 3-hour ceiling was systematically selecting *against* the only durable moat available to a solo operator — accumulated maintenance work that a cloner with the same AI tools will not sustain. At 20 hrs/week that class of business is open.
 
@@ -58,12 +66,12 @@ A NZ-resident solo operator, building with an AI coding agent, wants a software 
 
 ## Open questions — ranked by how much they matter
 
-1. **🔴 DECISIVE: Do real contractors find the quarterly obligation painful?** Demand is inferred from statute with **zero user-voice evidence** — this is the only rubric criterion still below par (12/20). Three of ten interviewees describing pain → score ~67, above the bar. Fewer than three → stop. *Phase 0's first job.*
-2. **🔴 How many NZ businesses hold retention money?** Unknown. **Under 400 → stop** (threshold lowered by the NZ$3,000 target). Above ~800 → viable.
-3. **🟠 Do Australia and the UK have comparable retention-trust regimes?** Only evidence is Retention Track's own "AU/NZ/UK legislation-matched" marketing [S] — **unverified**. If yes, the TAM risk becomes a staged expansion plan and AU is the year-two market.
-4. **🟠 What do Retention Track, Payapps, Gojee and Workbench charge?** No pricing was obtainable for any of them.
-5. **🟡 Exact commencement and current obligations under the Construction Contracts (Retention Money) Amendment Act 2023.** Not verified.
-6. **🟡 Does Xero or a major NZ construction platform have retention-trust compliance on a roadmap?** Would fire kill-question 3.
+1. **🔴 DECISIVE: Do the three licences actually permit commercial redistribution of corporate insolvency notices?** France's Licence Ouverte 2.0, the UK's OGL v3.0 (**personal data expressly excluded**) and Spain's Law 37/2007. **Every claim about these in this repo came from a search snippet, not the licence text.** Any prohibition → stop.
+2. **🔴 Is the German restriction local or a direction of travel?** German DPAs are working with the NRW Ministry of Justice to make private republication harder. If EU-wide, the category is a melting iceberg.
+3. **🟠 What do Prometiam and Insolvencies.live actually charge, cover and how fast are they?** Neither publishes pricing. If they are already fast, cheap and well-covered, you are fourth with no edge.
+4. **🟠 Do credit-risk buyers report learning about filings too late?** Need ≥4 of 10 interviewees confirming, or naming a loss.
+5. **🟠 Can a solo vendor obtain professional indemnity insurance and enforceable limitation of liability?** Customers extend credit on this data.
+6. **🟡 Never reached in any round:** trades certification tracking, self-storage, commercial cleaning, equipment hire.
 
 ### ✅ Resolved by the operator on 2026-09-03
 - **Revenue target is NZ$3,000/month** (≈US$1,800), not US$3,000. Cut required acquisition from 3.7 to 2.3 customers/month and lowered the TAM threshold from ~1,500 to ~800. Worth +1 on demand evidence.
@@ -78,15 +86,18 @@ A NZ-resident solo operator, building with an AI coding agent, wants a software 
 
 | Metric | Current | Target | Phase gate |
 |---|---|---|---|
+| Licence texts read in full | 0 | 3 | Phase 0 |
+| Legal opinion obtained | No | Yes | Phase 0 |
 | Interviews completed | 0 | 10 | Phase 0 |
-| TAM sources found | 0 | 2 | Phase 0 |
-| Email signups | 0 | 20 | Phase 1 |
-| Unprompted "when can I buy" replies | 0 | 5 | Phase 1 |
-| Paying customers | 0 | 1 | Phase 3 |
-| New paying customers/month | 0 | 2.3 | Phase 4 |
-| Monthly churn | — | <6% | Phase 4 |
-| Operator hrs/week (measured) | — | ≤3 | Phase 5 |
-| MRR | NZ$0 | NZ$3,000 (21 customers) | Phase 6 |
+| Interviewees reporting late notice | 0 | ≥4 | Phase 0 |
+| Outreach replies | 0 | 12 | Phase 1 |
+| Unprompted pricing/access enquiries | 0 | 4 | Phase 1 |
+| Jurisdictions live | 0 | 3 (FR/UK/ES) | Phase 4 |
+| Median notice-to-API latency | — | <24 hrs | Phase 4 |
+| Paying customers | 0 | **6** | Phase 4 |
+| Monthly churn | — | <5% | Phase 4 |
+| Operator hrs/week (measured) | — | ≤15 | Phase 5 |
+| MRR | NZ$0 | NZ$3,000 (6 customers) | Phase 6 |
 
 ---
 
