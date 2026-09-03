@@ -13,7 +13,7 @@
 | Ongoing budget | **US$100/month** | Assumed (field left blank) |
 | Hours during build | **8 hrs/week** | Assumed (field left blank) |
 | Hours after launch | **≤3 hrs/week — hard ceiling** | Assumed (field left blank) |
-| Revenue target | **US$3,000/month by month 12** | Assumed (field left blank) |
+| Revenue target | **NZ$3,000/month by month 12** (≈US$1,800) | **CONFIRMED by operator 2026-09-03** |
 | Technical level | Can read, review and direct AI-generated code. Not hand-writing a codebase. | Stated |
 | Country / tax residency | **New Zealand** | Stated |
 | Existing audience | **None. Zero distribution on day one.** | Stated |
@@ -34,11 +34,12 @@
 | # | Assumption | Why it matters | If wrong, tell me |
 |---|---|---|---|
 | A1 | Budget figures are **USD**, not NZD | US$300/NZ$500 vs NZ$300 changes almost nothing at this scale | Low impact |
-| A2 | **Revenue target is US$3,000/month, not NZ$3,000** | **High impact.** NZ$3,000/mo ≈ US$1,800/mo — a materially easier target that widens the candidate set considerably | **Please confirm** |
+| ~~A2~~ | ~~Revenue target currency~~ | **RESOLVED 2026-09-03: the target is NZ$3,000/month (≈US$1,800).** This is a 40% lower bar than assumed and materially widens the viable candidate set — see the revised arithmetic in `03-deep-dives.md` | **Resolved** |
 | A3 | "Month 12" counts from first build week, not from first revenue | Sets the kill-gate calendar in the build plan | Medium |
-| A4 | The ≤3 hrs/week ceiling applies at **steady state**, not during months 1–12 | See critique C1 — as written the ceiling is not achievable during the growth year | **Please confirm** |
-| A5 | You are willing to send **cold outbound email to businesses** and post occasionally in niche forums | These are not "social media" or "personal brand", but they are manual outreach. If they are also off the table, the viable channel set shrinks to marketplace search alone | **Please confirm** |
+| A4 | The ≤3 hrs/week ceiling applies at **steady state**, not during months 1–12 | See critique C1 — as written the ceiling is not achievable during the growth year | Assumed, unchallenged |
+| ~~A5~~ | ~~Willingness to do cold outreach~~ | **RESOLVED 2026-09-03: yes — compliant cold email and occasional trade-forum posting are both acceptable.** This keeps ranked channels #2 and #3 live and is the difference between having a distribution plan and not having one | **Resolved** |
 | A6 | You will register a NZ company or operate as a sole trader, and will use a Merchant of Record | See §4 — this is close to forced for a solo NZ seller | Medium |
+| **A7** | **Target market geography is OPEN** — the business need not serve NZ customers | **RESOLVED 2026-09-03.** The operator remains NZ tax-resident, so §4.2 and §4.5 still bind, but the *customer* may be anywhere. See §4.6 below | **Resolved** |
 
 ---
 
@@ -97,6 +98,17 @@ All figures accessed **2026-09-03**. Evidence tier: **[S]** = seen in a web-sear
 ### 4.4 Company setup
 - NZ company incorporation is approximately **NZD 118.74 + GST (≈NZD 136.55)**, plus ~NZD 10 + GST to reserve a name. No minimum share capital. [S] — https://companies-register.companiesoffice.govt.nz/help-centre/starting-a-company/incorporating-a-company/ , https://www.mbie.govt.nz/business-and-employment/business/regulating-entities/review-of-new-zealand-companies-office-fees-and-levies-2025/discussion-document-review-of-new-zealand-companies-office-fees-and-levies-2025/section-5-proposed-fees-and-total-charges-for-all-registers
 - **[I]** Comfortably inside the US$300 budget. A sole trader is cheaper still; a company is the safer default once customers exist.
+
+### 4.6 Geography is open — and a Merchant of Record is what makes that true
+
+**Confirmed 2026-09-03: the business does not have to target New Zealand customers.**
+
+This is less of a loosening than it first appears, and more of one in a different direction:
+- **Tax does not constrain geography, because Paddle absorbs it.** The UK nil-threshold and EU first-euro problems in §4.2 are exactly what a Merchant of Record exists to solve. Selling B2B through Paddle, the operator can sell into the UK, EU, US or Australia without registering anywhere. My earlier lean toward NZ-domestic selling was partly belt-and-braces and should be relaxed.
+- **Timezone still constrains geography**, and this is the binding one. See §4.5 — async-only support is fine anywhere, but anything needing responsiveness is limited to AU/NZ.
+- **Credibility still favours the home market for a first product.** Being a local vendor is worth something when selling compliance software to a trust-sensitive buyer, and it costs nothing to start there and expand.
+
+**Net effect on strategy:** start where credibility is cheapest, then expand to the largest market that shares the timezone. Do not treat NZ as a ceiling.
 
 ### 4.5 Timezone — a real constraint, and a partial advantage
 **[I]** NZ is UTC+12/+13. Auckland business hours have **near-zero overlap with US business hours and almost none with EU**. Australia (2–4 hrs behind) is the only major market with genuine working overlap.

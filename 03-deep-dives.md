@@ -4,27 +4,32 @@
 
 **Rubric note:** the brief says "all nine" criteria but the table lists **eight**, whose weights sum correctly to 100. I score the eight given.
 
-**Currency:** target read as **US$3,000/month** (assumption A2 — please confirm). NZD conversion at **NZD/USD ≈ 0.60** [ESTIMATE — check the spot rate; this materially affects every figure below].
+**Currency — REVISED 2026-09-03.** The operator has confirmed the target is **NZ$3,000/month (≈US$1,800)**, not US$3,000. This is a **40% lower bar** than originally assumed and it changes every number below. NZD/USD ≈ 0.60 [ESTIMATE — check spot].
+
+**Geography — REVISED 2026-09-03.** The operator has confirmed the business **need not target NZ customers**, and that **compliant cold email and trade-forum posting are both acceptable**. Both changes are incorporated in the scores.
 
 ---
 
 ## The churn arithmetic that governs all three
 
-From `research/ground-truth-findings.md`: customers paying **under US$50/month churn at 6–8.6% monthly**. This is the single most important constraint on the target, and it is almost always ignored in plans like this one.
+From `research/ground-truth-findings.md`: customers paying **under US$50/month churn at 6–8.6% monthly**. This remains the most important constraint on the target and is almost always ignored in plans like this one.
 
 Model: `N(t) = (G/c) × (1 − (1−c)^t)` where `G` = gross new paying customers per month, `c` = monthly churn.
 
-**At US$47/month (NZ$79), c = 6%** *(low end of the band, justified because compliance tools are stickier than average)*:
-- Customers needed for US$3,000/mo = 3000 ÷ 47 = **64**
-- `1 − 0.94^12 = 0.5241`, so `N(12) = G × 8.735`
-- To reach 64 by month 12: **G = 7.3 new paying customers every month, ~88 gross signups across the year** [ESTIMATE]
+**Target: NZ$3,000/month.**
 
-**At US$89/month (NZ$149), c = 5%** *(above the $50 threshold where churn improves)*:
-- Customers needed = 3000 ÷ 89 = **34**
-- `1 − 0.95^12 = 0.4596`, so `N(12) = G × 9.19`
-- To reach 34 by month 12: **G = 3.7 per month, ~45 gross signups across the year** [ESTIMATE]
+| Price | Churn | Customers needed | New customers/month | Gross signups over 12 mo |
+|---|---|---|---|---|
+| NZ$79 (US$47) | 6% | **38** | **4.4** | ~52 |
+| **NZ$149 (US$89)** | **5%** | **21** | **2.3** | **~28** |
+| NZ$199 (US$119) | 5% | **16** | **1.7** | ~21 |
 
-> **Strategic conclusion, and one of the most actionable findings in this run: price high.** Doubling the price roughly halves the customers needed *and* reduces churn, cutting required monthly acquisition from 7.3 to 3.7 — a 49% reduction in the hardest part of the job. Kill-question 8 says price to value delivered, not to competitors. **A tool that helps avoid a NZ$200,000 fine is not a NZ$79/month product.**
+*Worked example at NZ$149: `3000 ÷ 149 = 20.1 → 21 customers`. `1 − 0.95^12 = 0.4596`, so `N(12) = G × 9.19`. `21 ÷ 9.19 = 2.3 per month`.* [ESTIMATE]
+
+> ### The two decisions that do the most work
+> **1. The currency clarification alone cut the job nearly in half** — from 3.7 new customers a month to 2.3. Roughly **one new customer every 13 days for a year** is now the whole task. That is a materially different proposition from the one I scored at 62.
+>
+> **2. Price high anyway.** Moving NZ$79 → NZ$149 cuts required monthly acquisition from 4.4 to 2.3 — a 48% reduction in the hardest part of the job — *and* lowers churn by crossing the US$50 threshold. Kill-question 8 says price to value delivered. **A tool that helps avoid a NZ$200,000 fine is not a NZ$79/month product.** NZ$199 is worth testing.
 
 ---
 
@@ -59,11 +64,13 @@ Model: `N(t) = (G/c) × (1 − (1−c)^t)` where `G` = gross new paying customer
 **Bottom-up market math** *(every input marked)*
 ```
 Reachable buyers   = UNVERIFIED — no count of NZ businesses holding retentions was obtainable
-Price              = NZ$149/mo = US$89                      [ESTIMATE, chosen by value-pricing logic]
-Customers needed   = 3000 / 89 = 34                          [ESTIMATE]
-Gross signups req. = 3.7/month, ~45 over 12 months           [ESTIMATE, 5% monthly churn]
+Price              = NZ$149/mo                               [ESTIMATE, chosen by value-pricing logic]
+Customers needed   = 3000 / 149 = 21                         [ESTIMATE]
+Gross signups req. = 2.3/month, ~28 over 12 months           [ESTIMATE, 5% monthly churn]
 ```
-> **If the pool is ~1,500 businesses, 45 gross signups is 3% penetration in year one — demanding but plausible for a compliance tool with a legal forcing function. If the pool is ~400, this is not a business.** Resolving that number is the first job of Phase 0 and the gate on everything else.
+> **Revised 2026-09-03.** At the confirmed NZ$3,000 target, **28 gross signups over a year** is needed rather than 45. Against a pool of even **800** businesses that is **3.5% penetration**; against 1,500 it is 1.9%. **The TAM concern that wounded this candidate is much reduced, though not eliminated** — a pool under ~400 still kills it. Resolving the number remains Phase 0's first job, but the threshold it must clear has dropped substantially.
+
+**Expansion path — newly relevant now that geography is open.** Retention Track markets itself as **"AU/NZ/UK legislation-matched"** [S], which is evidence that analogous retention-trust regimes exist in Australia and the UK. **This is a competitor's own marketing claim and I could not verify the underlying regimes — treat as a hypothesis, not a fact.** If it holds, the sequence is NZ first (cheapest credibility, right timezone), then Australia (~5× the market, 2–4 hour timezone gap), then the UK. **Verifying whether AU and UK retention-trust obligations genuinely exist and resemble NZ's is now a Phase 0 task**, because it converts a small-TAM risk into a staged growth plan.
 
 **Why now.** The Act is in force with severe penalties. Weaker than a fresh deadline — the law has been live since 2023 and full commencement was **not verified**.
 
@@ -78,15 +85,17 @@ Gross signups req. = 3.7/month, ~45 over 12 months           [ESTIMATE, 5% month
 ### Rubric score
 | Criterion | Wt | Score | Justification |
 |---|---|---|---|
-| Verified demand evidence | 20 | **11** | Law verified and severe, but demand is *inferred from statute*; zero user-voice evidence found |
-| Distribution | 20 | **13** | Associations + compliant outreach + home market and timezone; Xero listing gated behind 3 customers |
+| Verified demand evidence | 20 | **12** | Law verified and severe, but demand is *inferred from statute*; zero user-voice evidence found. **+1 on revision:** the same evidence now has to support 21 customers rather than 34 |
+| Distribution | 20 | **14** | Associations + home market and timezone; **+1 on revision:** compliant cold email and forum posting are now confirmed available, not assumed |
 | Willingness to pay | 15 | **10** | $200k/$50k penalties motivate strongly; five vendors prove spend — but no pricing verifiable |
 | Defensibility | 10 | **4** | Low. Compliance logic is copyable; only correctness and reviews defend it |
 | Passivity ceiling | 10 | **7** | ~3.0 hrs/wk. Quarterly cadence, no daily ops — but sitting on the ceiling |
 | AI-agent buildability | 10 | **9** | CRUD + ledger arithmetic + PDF reports + optional Xero API. Entirely conventional |
-| Time to first customer | 8 | **4** | 3–5 months realistically; direct sales must precede the marketplace listing |
+| Time to first customer | 8 | **4** | 3–5 months realistically; direct sales must precede the marketplace listing. **Unchanged** — a lower revenue target does not make the *first* customer arrive sooner |
 | Platform & regulatory risk (inverted) | 7 | **4** | Xero's Mar 2026 egress pricing is a live risk; mitigated by building standalone/CSV-first. Commencement date unverified |
-| **TOTAL** | **100** | **62** | **Below the 65 bar** |
+| **TOTAL** | **100** | **64** | **Was 62. Still one point below the bar** |
+
+> **A note on scoring discipline.** I moved exactly two criteria, by one point each, and I can name the reason for both. I deliberately did **not** bump time-to-first-customer, even though it would have produced a satisfying 65, because a smaller target genuinely does not make the first sale happen faster. Per `00-brief-review.md` §C4, scoring *to* the bar is the failure mode this rubric invites, and 64 is the honest number.
 
 ---
 
@@ -126,14 +135,14 @@ Gross signups req. = ~5/month, ~60 over 12 months            [ESTIMATE, 5% month
 | Criterion | Wt | Score | Justification |
 |---|---|---|---|
 | Verified demand evidence | 20 | **12** | Mandate verified, penalties severe, disruption real — but again no user-voice evidence |
-| Distribution | 20 | **12** | Real bookkeeper associations; best timezone overlap available to this operator |
+| Distribution | 20 | **13** | Real bookkeeper associations; best timezone overlap available to this operator; cold outreach now confirmed |
 | Willingness to pay | 15 | **10** | Bookkeepers expense tools; penalties severe |
 | Defensibility | 10 | **3** | SG rules are published by the ATO. Essentially none |
 | Passivity ceiling | 10 | **5** | 3–4 hrs/wk — **breaches the stated ceiling** |
 | AI-agent buildability | 10 | **7** | STP/SuperStream integration is non-trivial and regulated |
 | Time to first customer | 8 | **5** | 3–4 months |
 | Platform & regulatory risk (inverted) | 7 | **2** | **Active feature absorption by Xero/MYOB — the dominant risk, already underway** |
-| **TOTAL** | **100** | **56** | **Well below the bar** |
+| **TOTAL** | **100** | **57** | **Well below the bar.** The revision does not touch its wound: absorption by Xero and MYOB is already underway |
 
 ---
 
@@ -178,25 +187,30 @@ Gross signups req. = ~4/month, ~50 over 12 months             [ESTIMATE, 5% mont
 | Criterion | Wt | Score | Justification |
 |---|---|---|---|
 | Verified demand evidence | 20 | **11** | Dated and quantified pain, but sourced from news coverage, not users asking for a tool |
-| Distribution | 20 | **11** | Precise and reachable dev community, but narrow and not marketplace-driven |
-| Willingness to pay | 15 | **8** | $17k/yr pain trivially justifies $79/mo — but the buyer can build it themselves |
+| Distribution | 20 | **12** | Precise and reachable dev community, but narrow and not marketplace-driven; outreach now confirmed |
+| Willingness to pay | 15 | **9** | $17k/yr pain trivially justifies the price — and at the NZ$3,000 target only ~23 of ~1,250 developer orgs (1.8%) are needed. But the buyer can still build it themselves |
 | Defensibility | 10 | **2** | Lowest in the set. The customer *is* the potential cloner |
 | Passivity ceiling | 10 | **7** | Low support load; mandatory ongoing pricing-rule monitoring |
 | AI-agent buildability | 10 | **9** | Straightforward API ingest, modelling and alerting |
 | Time to first customer | 8 | **6** | Fastest of the three — no marketplace gate, developers buy quickly |
 | Platform & regulatory risk (inverted) | 7 | **1** | **Worst possible: single-platform dependency where the platform is also the obvious competitor** |
-| **TOTAL** | **100** | **55** | **Well below the bar** |
+| **TOTAL** | **100** | **57** | **Well below the bar.** The revision does not touch its wound: Xero remains both its platform and its most likely competitor |
 
 ---
 
 ## Scoreboard
 
+*Revised 2026-09-03 for the confirmed NZ$3,000 target, open geography, and confirmed willingness to do cold outreach. Original scores in brackets.*
+
 | Candidate | Demand /20 | Distrib /20 | Pay /15 | Defens /10 | Passive /10 | Build /10 | Speed /8 | Risk /7 | **Total** |
 |---|---|---|---|---|---|---|---|---|---|
-| **A — NZ retention money** | 11 | 13 | 10 | 4 | 7 | 9 | 4 | 4 | **62** |
-| **B — AU payday super** | 12 | 12 | 10 | 3 | 5 | 7 | 5 | 2 | **56** |
-| **C — Xero egress monitor** | 11 | 11 | 8 | 2 | 7 | 9 | 6 | 1 | **55** |
+| **A — NZ retention money** | 12 (11) | 14 (13) | 10 | 4 | 7 | 9 | 4 | 4 | **64** (62) |
+| **B — AU payday super** | 12 | 13 (12) | 10 | 3 | 5 | 7 | 5 | 2 | **57** (56) |
+| **C — Xero egress monitor** | 11 | 12 (11) | 9 (8) | 2 | 7 | 9 | 6 | 1 | **57** (55) |
 
-> ### **Nothing clears the 65 bar.** The best candidate falls three points short, and it does so on the two criteria that matter most: verified demand and defensibility.
+> ### **Still nothing clears the 65 bar — but the gap has changed character.**
+> The best candidate now falls **one point short instead of three**, and — this is the important part — **the remaining gap is closable by Phase 0 evidence rather than by structure.** Before the revision, clearing the bar required an unknown TAM to turn out large. Now, two of Phase 0's four deliverables (a sourced TAM and ten user interviews) target the single criterion still holding it down: **verified demand evidence at 12/20**. Three of ten interviewees describing real pain would move that to 15+ and put the total at 67.
+>
+> The structural weakness is unchanged and will not improve: **defensibility stays at 4/10**, and no amount of validation fixes that.
 
 The consistent pattern across all three is instructive rather than accidental: **every candidate scores well on buildability and poorly on defensibility and verified demand.** That is precisely the tension §4 of the brief predicted, showing up in the numbers rather than in argument.

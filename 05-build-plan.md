@@ -5,9 +5,10 @@
 
 **Working name:** RetentionLedger (placeholder)
 **Buyer:** NZ construction businesses that hold retention money from subcontractors
-**Price:** NZ$149/month (US$89) — set by the value-pricing arithmetic in `03-deep-dives.md`, not by competitors
-**Target:** US$3,000/month ≈ 34 customers ≈ 3.7 new paying customers per month
-**Payments:** Paddle (Merchant of Record). NZ-domestic B2B only at first, so GST is the only tax surface.
+**Price:** NZ$149/month — set by the value-pricing arithmetic in `03-deep-dives.md`, not by competitors. Test NZ$199.
+**Target:** **NZ$3,000/month ≈ 21 customers ≈ 2.3 new paying customers per month** (one every ~13 days)
+**Geography:** NZ first for credibility and timezone, **Australia as the year-two market** (~5× the size, 2–4 hr gap) if Phase 0 confirms a comparable retention regime there.
+**Payments:** Paddle (Merchant of Record). NZ-domestic B2B first, so GST is the only tax surface; Paddle absorbs the tax problem when expanding.
 **Non-negotiable product boundary:** the software **never touches, moves or custodies money.** Tracking and reporting only. Crossing this line pulls the business into NZ Financial Service Providers Act 2010 and AML/CFT Act 2009 scope.
 
 **Budget envelope:** ~NZ$500 (US$300) upfront, ~US$100/month ongoing.
@@ -18,25 +19,29 @@
 ## Phase 0 — Validate before building
 ### *No code. This is the gate on everything.*
 
-**Objective.** Determine whether enough NZ businesses hold retention money, and whether they experience the obligation as painful enough to pay NZ$149/month.
+**Objective.** Determine whether enough businesses hold retention money, and whether they experience the obligation as painful enough to pay NZ$149/month.
+
+> **Priority order matters.** Deliverable 2 (interviews) is now the single highest-leverage item in the whole plan: **verified demand evidence is the only rubric criterion still holding this below your 65 bar.** Three of ten interviewees describing real pain moves the score to ~67. Do the interviews first, not last.
 
 **Deliverables**
 1. `research/tam.md` — a sourced count of NZ businesses holding retention money, from MBIE construction statistics, Stats NZ business demography by ANZSIC construction subclass, and Registered Master Builders / Specialist Trade Contractors Federation membership figures. Every figure with a URL and date.
 2. `research/interviews.md` — notes from **10 conversations** with NZ head contractors, construction bookkeepers or QSs. Script: *"Walk me through how you handled your last quarterly retention report."* Do not pitch. Listen.
 3. `research/competitors.md` — actual prices for Retention Track, Payapps, Gojee, Workbench, obtained by signing up for trials or asking directly.
 4. `research/legal.md` — written confirmation of the Act's current commencement and obligations, from MBIE or a NZ construction lawyer.
-5. A one-page written go/no-go with the numbers.
+5. **`research/expansion.md` — whether Australia and the UK have comparable retention-trust regimes.** Retention Track markets itself as "AU/NZ/UK legislation-matched" [S], but that is a competitor's marketing claim and is **unverified**. Check the Australian state Security of Payment / project trust account schemes and UK construction retention practice directly. If comparable regimes exist, the small-TAM risk becomes a staged expansion plan instead.
+6. A one-page written go/no-go with the numbers.
 
 **Acceptance criteria**
 - [ ] TAM figure sourced from **≥2 independent official sources**
 - [ ] **≥10** interviews completed and written up
 - [ ] **≥3** competitor prices obtained
 - [ ] Legal position confirmed in writing by a named source
+- [ ] AU/UK regime question answered either way, with sources
 
 **Effort and cost.** Agent: ~4 hrs (desk research, drafting outreach). Operator: **~12 hrs** (the interviews — this part cannot be delegated). Cost: **NZ$0–200** (optional legal question).
 
 **🛑 KILL CRITERIA — stop entirely if any of these is true**
-- Pool of businesses holding retentions is **under 800**
+- Pool of businesses holding retentions is **under 400** *(threshold lowered from 800 by the confirmed NZ$3,000 target)* **and** no comparable AU regime exists to expand into
 - **Fewer than 3 of 10** interviewees describe the quarterly obligation as painful, or say they already handle it adequately
 - **≥2 of 5** incumbents already offer a dedicated, well-reviewed compliance product under NZ$149/month
 - Xero or a major NZ construction platform has retention-trust compliance on a published roadmap
@@ -61,13 +66,13 @@
 - [ ] Page live on a custom domain, loads under 2s, mobile-legible
 - [ ] Analytics recording visits and conversions
 - [ ] 100 outreach emails sent, all UEMA-compliant, with unsubscribe honoured automatically
-- [ ] **≥25 email signups**
+- [ ] **≥20 email signups** *(lowered with the revised target — you need 21 customers, not 34)*
 - [ ] **≥5 people reply asking when it ships or what it costs** — the real signal
 
 **Effort and cost.** Agent: ~10 hrs. Operator: ~8 hrs. Cost: **~NZ$60** (domain + email sending).
 
 **🛑 KILL CRITERIA**
-- **Under 15 signups** from 100 targeted emails plus community posts (a <15% response to a legally-forced problem means the pain is not felt)
+- **Under 12 signups** from 100 targeted emails plus community posts (a <12% response to a legally-forced problem means the pain is not felt)
 - **Zero** unprompted "when can I buy this" replies
 - Association contacts uniformly decline to mention it
 
@@ -152,14 +157,14 @@
 **Acceptance criteria**
 - [ ] **≥1 association relationship live** (newsletter mention, listing, or member benefit)
 - [ ] Xero listing submitted, or a documented decision not to, with the egress cost modelled
-- [ ] **≥3 new paying customers per month for 3 consecutive months** — the arithmetic requires 3.7
+- [ ] **≥2 new paying customers per month for 3 consecutive months** — the arithmetic requires 2.3
 - [ ] CAC measured and under NZ$300 (payback inside 2 months at NZ$149)
 - [ ] Churn measured; **under 6% monthly**
 
 **Effort and cost.** Agent: ~20 hrs. Operator: ~6 hrs/week for 90 days. Cost: **~US$60/month**, plus optional NZ$200–400 for an association listing.
 
 **🛑 KILL CRITERIA**
-- After 90 days of one focused channel, **fewer than 2 new paying customers per month**
+- After 90 days of one focused channel, **fewer than 1 new paying customer per month**
 - Churn **above 8% monthly** — at that rate the target is arithmetically unreachable
 - CAC exceeds 3 months of revenue with no path down
 - Xero egress cost at projected scale exceeds 20% of revenue
@@ -208,25 +213,25 @@
 **Deliverables.** A one-page review against the numbers below, and a decision recorded in `STATE.md`.
 
 ### DOUBLE DOWN if all of these hold
-- MRR **≥ US$2,000** and growing month on month
+- MRR **≥ NZ$2,000** and growing month on month
 - Churn **< 6% monthly**
 - Operator time **≤ 3 hrs/week** sustained
 - CAC payback **< 3 months**
 - **≥1 channel** producing customers predictably
 
-*Then:* raise the price for new customers, add the adjacent obligation (progress claims, or the AU equivalent), and consider Australia — noting AU is ~5× the market and shares the timezone.
+*Then:* raise the price for new customers, add the adjacent obligation (progress claims), and **open Australia** — ~5× the market, shared timezone, and already scoped in Phase 0's expansion research.
 
 ### SHUT DOWN if any of these hold
-- MRR **< US$750** after 12 months of selling
+- MRR **< NZ$750** after 12 months of selling
 - Churn **> 10% monthly** sustained
 - Operator time **> 5 hrs/week** with no automation left
 - Zero customers acquired in the last 8 weeks
 - An incumbent has shipped this natively and is winning
 
-*Then:* consider selling. At 2–3× annual SDE for this tier, a business at US$1,500/month might fetch roughly **US$36,000–54,000** [ESTIMATE, from the multiples in `research/ground-truth-findings.md`] — a real outcome, not a failure.
+*Then:* consider selling. At 2–3× annual SDE for this tier, a business at NZ$1,500/month might fetch roughly **NZ$36,000–54,000** [ESTIMATE, from the multiples in `research/ground-truth-findings.md`] — a real outcome, not a failure.
 
 ### KEEP GOING, DON'T EXPAND if in between
-Revenue US$750–2,000, acceptable churn, hours within ceiling. Hold it as a small profitable asset. Do not add features. Do not hire. **Re-review in 6 months.**
+Revenue NZ$750–2,000, acceptable churn, hours within ceiling. Hold it as a small profitable asset. Do not add features. Do not hire. **Re-review in 6 months.**
 
 **Effort and cost.** Agent: ~2 hrs. Operator: ~3 hrs.
 
@@ -238,13 +243,13 @@ Revenue US$750–2,000, acceptable churn, hours within ceiling. Hold it as a sma
 
 | Phase | Agent hrs | Operator hrs | Cost |
 |---|---|---|---|
-| 0 | 4 | 12 | NZ$0–200 |
+| 0 | 5 | 12 | NZ$0–200 |
 | 1 | 10 | 8 | ~NZ$60 |
 | 2 | 30 | 10 | ~US$20/mo |
 | 3 | 25 | 8 | ~US$40/mo + Paddle fees |
 | 4 | 20 | ~6/wk × 90 days | ~US$60/mo + NZ$200–400 |
 | 5 | 15 | 6 | ~US$70/mo |
 | 6 | 2 | 3 | — |
-| **Total** | **~106** | **~125** | **Within US$300 upfront and US$100/month** |
+| **Total** | **~107** | **~125** | **Within US$300 upfront and US$100/month** |
 
 **Honest note on hours.** Operator time across Phases 0–4 averages **well above 3 hrs/week** — closer to 6–8. The ≤3 hrs/week ceiling is a Phase 5 *exit criterion*, and treating it as a build-phase constraint would make the plan undeliverable. This is flagged in `00-brief-review.md` §C1 and is the single most important expectation to set correctly before starting.
